@@ -1,0 +1,52 @@
+{
+  "name": "@o2ter/wireframe",
+  "version": "1.0.0",
+  "main": "dist/index",
+  "module": "dist/index",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/*"
+  ],
+  "repository": "https://github.com/o2ter/wireframe.git",
+  "author": "Susan Cheng <susan.doggie@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf ./dist/*",
+    "rollup": "yarn clean && rollup -c"
+  },
+  "dependencies": {
+    "lodash": ">=4.17.21"
+  },
+  "peerDependencies": {
+    "@o2ter/i18n": ">=0.0.5",
+    "@o2ter/react-ui": ">=0.0.115",
+    "react": ">=18.2.0",
+    "react-native": ">=0.70.2",
+    "sugax": ">=1.0.69"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/preset-env": "^7.19.4",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@o2ter/i18n": "^0.0.5",
+    "@o2ter/react-ui": "^0.0.115",
+    "@rollup/plugin-babel": "^6.0.0",
+    "@rollup/plugin-commonjs": "^23.0.0",
+    "@rollup/plugin-json": "^5.0.0",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "@rollup/plugin-typescript": "^9.0.0",
+    "@types/lodash": "^4.14.186",
+    "@types/react": "^18.0.21",
+    "@types/react-native": "^0.70.4",
+    "babel-loader": "^8.2.5",
+    "rollup": "^2.79.1",
+    "rollup-plugin-dts": "^4.2.3",
+    "style-inject": "link:./src/styleInject",
+    "sugax": "^1.0.69",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.4",
+    "webpack": "^5.74.0"
+  }
+}
