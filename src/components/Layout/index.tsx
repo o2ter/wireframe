@@ -26,13 +26,13 @@
 import _ from 'lodash';
 import React from 'react';
 
-type LayoutProps = {
+type LayoutProviderProps = {
 
 };
 
-const LayoutContext = React.createContext<LayoutProps>({});
+const LayoutContext = React.createContext<LayoutProviderProps>({});
 
-export const LayoutProvider: React.FC<React.PropsWithChildren<LayoutProps>> = ({
+export const LayoutProvider: React.FC<React.PropsWithChildren<LayoutProviderProps>> = ({
   children
 }) => {
 
