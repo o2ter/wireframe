@@ -1,5 +1,5 @@
 //
-//  index.js
+//  index.tsx
 //
 //  The MIT License
 //  Copyright (c) 2021 - 2023 O2ter Limited. All rights reserved.
@@ -23,4 +23,5 @@
 //  THE SOFTWARE.
 //
 
-export * from './components';
+import _ from 'lodash';
+import React from 'react';
