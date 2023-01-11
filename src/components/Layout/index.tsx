@@ -33,16 +33,12 @@ type LayoutProviderProps = {
 const LayoutContext = React.createContext<LayoutProviderProps>({});
 
 export const LayoutProvider: React.FC<React.PropsWithChildren<LayoutProviderProps>> = ({
-  children
-}) => {
-
-  const value = React.useMemo(() => ({
-
-  }), []);
-
-  return <LayoutContext.Provider value={value}>
+  children,
+  ...props
+}) => (
+  <LayoutContext.Provider value={props}>
     {children}
   </LayoutContext.Provider>
-}
+);
 
 export const useLayout = () => React.useContext(LayoutContext);
