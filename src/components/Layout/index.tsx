@@ -25,11 +25,14 @@
 
 import _ from 'lodash';
 import React from 'react';
-import { LayoutContext } from './context';
 
-export { useLayout } from './context';
+type LayoutProps = {
 
-export const LayoutProvider: React.FC<React.PropsWithChildren> = ({
+};
+
+const LayoutContext = React.createContext<LayoutProps>({});
+
+export const LayoutProvider: React.FC<React.PropsWithChildren<LayoutProps>> = ({
   children
 }) => {
 
@@ -41,3 +44,5 @@ export const LayoutProvider: React.FC<React.PropsWithChildren> = ({
     {children}
   </LayoutContext.Provider>
 }
+
+export const useLayout = () => React.useContext(LayoutContext);
