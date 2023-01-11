@@ -1,5 +1,5 @@
 //
-//  index.tsx
+//  context.tsx
 //
 //  The MIT License
 //  Copyright (c) 2021 - 2023 O2ter Limited. All rights reserved.
@@ -25,15 +25,7 @@
 
 import _ from 'lodash';
 import React from 'react';
-import { LayoutContext } from './context';
 
-export { useLayout } from './context';
+export const LayoutContext = React.createContext({});
 
-export const LayoutProvider: React.FC<React.PropsWithChildren> = ({
-  children
-}) => {
-
-  return <LayoutContext.Provider value={{}}>
-    {children}
-  </LayoutContext.Provider>
-}
+export const useLayout = () => React.useContext(LayoutContext);
