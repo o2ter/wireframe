@@ -2582,10 +2582,6 @@ strip-ansi@^6.0.0, strip-ansi@^6.0.1:
   dependencies:
     ansi-regex "^5.0.1"
 
-"style-inject@link:./src/styleInject":
-  version "0.0.0"
-  uid ""
-
 sugax@^1.0.69:
   version "1.0.69"
   resolved "https://registry.yarnpkg.com/sugax/-/sugax-1.0.69.tgz#d93e5e01e605c9c23bcfb1b17daa9949f701eb96"
