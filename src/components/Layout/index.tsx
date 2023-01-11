@@ -33,7 +33,11 @@ export const LayoutProvider: React.FC<React.PropsWithChildren> = ({
   children
 }) => {
 
-  return <LayoutContext.Provider value={{}}>
+  const value = React.useMemo(() => ({
+
+  }), []);
+
+  return <LayoutContext.Provider value={value}>
     {children}
   </LayoutContext.Provider>
 }
