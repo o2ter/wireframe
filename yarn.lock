@@ -1061,18 +1061,18 @@
     htmlparser2 "^7.1.2"
     ramda "^0.27.2"
 
-"@o2ter/i18n@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@o2ter/i18n/-/i18n-0.0.5.tgz#3cc784ac2e3cc2f34ff6f71e07a90df6acb6a9fc"
-  integrity sha512-YPFIycdx5nig0i+GvkfbrbF/tSa+QjVtb/6C5cYKUZcNuZKuDlfXXlpWkmrKPeRJp3YbafecMX42TpCHFQwdSQ==
+"@o2ter/i18n@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@o2ter/i18n/-/i18n-0.0.7.tgz#7e98c68f47436e2e49e0d365d068e20c3bded408"
+  integrity sha512-lcZYLJSNdOJVx559hwb3V7i+9c67UBLZ2E0hQN+YdAJaI0Kc3s4GWmDlNbtoff2Bc9hj8UWb2Gsbi7OzTAUBow==
   dependencies:
     events ">=3.3.0"
     lodash ">=4.17.21"
 
-"@o2ter/react-ui@^0.0.115":
-  version "0.0.115"
-  resolved "https://registry.yarnpkg.com/@o2ter/react-ui/-/react-ui-0.0.115.tgz#9a4e601bdf6dfcfcc74cc139a0ab1d9bb26a0ba9"
-  integrity sha512-jwAVkjwBPSLmCt7LNey0AQZWJNFWlc428jBfmuBi/jlLFpPpmv+II6s7VqP5S6diu89fLxIPxJ7KLswabuoiaA==
+"@o2ter/react-ui@^0.0.118":
+  version "0.0.118"
+  resolved "https://registry.yarnpkg.com/@o2ter/react-ui/-/react-ui-0.0.118.tgz#ae767fb34cf94c7b3be13336e4bd37d35f0eddd1"
+  integrity sha512-jMY6dhXFhDTavouKn2lkiFjsreiedPm3Vo+IscpDDWEy2pHx3DPtxyJ60qWqUbbR97AReXIUo8sP2QN4YhPwHg==
   dependencies:
     "@react-native-picker/picker" ">=2.4.7"
     jsbarcode ">=3.11.5"
@@ -1080,7 +1080,7 @@
     lottie-ios ">=3.4.4"
     lottie-react-native ">=5.1.4"
     lottie-web ">=5.9.6"
-    luxon ">=3.0.4"
+    luxon ">=3.2.1"
     normalize-css-color ">=1.0.2"
     qrcode ">=1.5.1"
     react-dom ">=18.2.0"
@@ -2142,7 +2142,7 @@ lru-cache@^5.1.1:
   dependencies:
     yallist "^3.0.2"
 
-luxon@>=3.0.4:
+luxon@>=3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/luxon/-/luxon-3.2.1.tgz#14f1af209188ad61212578ea7e3d518d18cee45f"
   integrity sha512-QrwPArQCNLAKGO/C+ZIilgIuDnEnKx5QYODdDtbFaxzsbZcc/a7WFq7MhsVYgRlwawLtvOUESTlfJ+hc/USqPg==
