@@ -1,5 +1,5 @@
 //
-//  index.tsx
+//  index.js
 //
 //  The MIT License
 //  Copyright (c) 2021 - 2023 O2ter Limited. All rights reserved.
@@ -23,33 +23,4 @@
 //  THE SOFTWARE.
 //
 
-import _ from 'lodash';
-import React from 'react';
-
-import * as themes from '../../themes';
-
-type LayoutProviderProps = {
-  theme?: keyof typeof themes;
-};
-
-const LayoutContext = React.createContext<Required<LayoutProviderProps>>({
-  theme: 'default',
-});
-
-export const LayoutProvider: React.FC<React.PropsWithChildren<LayoutProviderProps>> = ({
-  children,
-  ...props
-}) => {
-  const parent = React.useContext(LayoutContext);
-  const value = React.useMemo(() => ({ ...parent, ...props }), [parent, props]);
-  return (
-    <LayoutContext.Provider value={value}>
-      {children}
-    </LayoutContext.Provider>
-  );
-};
-
-export const useLayout = () => {
-  const { theme } = React.useContext(LayoutContext);
-  return themes[theme];
-};
+export const test = '';
