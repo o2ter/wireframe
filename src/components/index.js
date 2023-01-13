@@ -23,4 +23,4 @@
 //  THE SOFTWARE.
 //
 
-export * from './Layout';
+export { LayoutProvider } from './Layout';
