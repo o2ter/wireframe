@@ -1,5 +1,5 @@
 //
-//  index.js
+//  index.ts
 //
 //  The MIT License
 //  Copyright (c) 2021 - 2023 O2ter Limited. All rights reserved.
@@ -23,4 +23,4 @@
 //  THE SOFTWARE.
 //
 
-export * as default from './default';
+export const test = '';
