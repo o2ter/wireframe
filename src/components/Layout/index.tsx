@@ -25,6 +25,7 @@
 
 import _ from 'lodash';
 import React from 'react';
+import { useEquivalent } from 'sugax';
 import * as themes from '../../themes';
 
 type LayoutProviderProps = {
@@ -44,7 +45,7 @@ export const LayoutProvider: React.FC<React.PropsWithChildren<LayoutProviderProp
   ...props
 }) => {
   const parent = React.useContext(LayoutContext);
-  const value = React.useMemo(() => ({ ...parent, ...props }), [parent, props]);
+  const value = React.useMemo(() => ({ ...parent, ...props }), [parent, useEquivalent(props)]);
   return (
     <LayoutContext.Provider value={value}>
       {children}
