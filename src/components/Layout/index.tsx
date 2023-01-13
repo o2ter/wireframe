@@ -53,6 +53,6 @@ export const LayoutProvider: React.FC<React.PropsWithChildren<LayoutProviderProp
 };
 
 export const useLayout = () => {
-  const { theme } = React.useContext(LayoutContext);
-  return themes[theme];
+  const { theme, ...props } = React.useContext(LayoutContext);
+  return { theme: themes[theme], ...props };
 };
