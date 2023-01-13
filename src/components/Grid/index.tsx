@@ -1,5 +1,5 @@
 //
-//  index.js
+//  index.tsx
 //
 //  The MIT License
 //  Copyright (c) 2021 - 2023 O2ter Limited. All rights reserved.
@@ -23,5 +23,15 @@
 //  THE SOFTWARE.
 //
 
-export { LayoutProvider } from './Layout';
-export * from './Grid';
+import _ from 'lodash';
+import React from 'react';
+import { View } from '@o2ter/react-ui';
+
+export const Grid: React.FC<React.PropsWithChildren> = ({ children }) => {
+
+  return (
+    <View>
+      {children}
+    </View>
+  )
+}
