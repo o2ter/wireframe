@@ -23,4 +23,4 @@
 //  THE SOFTWARE.
 //
 
-export const test = '';
+export default {};
