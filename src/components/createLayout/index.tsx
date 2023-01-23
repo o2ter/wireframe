@@ -25,15 +25,26 @@
 
 import _ from 'lodash';
 import React from 'react';
+import { useEquivalent } from 'sugax';
+import { useLayout } from '../Layout';
 
 type LayoutOptions = {
   layout: React.ComponentType<React.PropsWithChildren>;
-  components: Record<string, React.ComponentType>;
+  components?: Record<string, React.ComponentType>;
 }
 
 export const createLayout = ({
   layout: LayoutComponent,
   ...props
-}: LayoutOptions): React.FC<React.PropsWithChildren> => ({ children }) => (
-  <LayoutComponent {...props}>{children}</LayoutComponent>
-)
+}: LayoutOptions): React.FC<React.PropsWithChildren> => {
+
+  const { components } = useLayout();
+  const _props = React.useMemo(() => ({
+    ...props,
+    components: _.assign({}, props.components, components),
+  }), [components, useEquivalent(props)]);
+
+  return ({ children }) => (
+    <LayoutComponent  {..._props}>{children}</LayoutComponent>
+  );  
+}

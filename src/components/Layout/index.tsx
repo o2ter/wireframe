@@ -30,12 +30,14 @@ import * as themes from '../../themes';
 
 type LayoutProviderProps = {
   theme?: keyof typeof themes;
+  components?: Record<string, React.ComponentType>;
   marginScale?: number;
   paddingScale?: number;
 };
 
 const LayoutContext = React.createContext<Required<LayoutProviderProps>>({
   theme: 'default',
+  components: {},
   marginScale: 1,
   paddingScale: 1,
 });
@@ -44,8 +46,14 @@ export const LayoutProvider: React.FC<React.PropsWithChildren<LayoutProviderProp
   children,
   ...props
 }) => {
+
   const parent = React.useContext(LayoutContext);
-  const value = React.useMemo(() => ({ ...parent, ...props }), [parent, useEquivalent(props)]);
+  const value = React.useMemo(() => ({
+    ...parent,
+    ...props,
+    components: _.assign({}, parent.components, props.components),
+  }), [parent, useEquivalent(props)]);
+
   return (
     <LayoutContext.Provider value={value}>
       {children}
