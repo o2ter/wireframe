@@ -24,4 +24,4 @@
 //
 
 export * from './createLayout';
-export { LayoutProvider, useLayout } from './Layout';
+export * from './Layout';
