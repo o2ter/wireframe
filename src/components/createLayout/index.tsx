@@ -45,6 +45,6 @@ export const createLayout = ({
   }), [components, useEquivalent(props)]);
 
   return ({ children }) => (
-    <LayoutComponent  {..._props}>{children}</LayoutComponent>
+    <LayoutComponent {..._props}>{children}</LayoutComponent>
   );  
 }
