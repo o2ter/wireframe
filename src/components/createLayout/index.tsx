@@ -25,18 +25,26 @@
 
 import _ from 'lodash';
 import React from 'react';
-import { LayoutProvider } from '../Layout';
+import { LayoutProvider, useLayout } from '../Layout';
 
 type LayoutOptions = {
-  layout: React.ComponentType<React.PropsWithChildren>;
+  layout: React.ComponentType<React.PropsWithChildren<ReturnType<typeof useLayout>>>;
   components?: Record<string, React.ComponentType>;
 }
 
 export const createLayout = ({
   layout: LayoutComponent,
   components = {},
-}: LayoutOptions): React.FC<React.PropsWithChildren> => ({ children }) => (
-  <LayoutProvider components={components}>
-    <LayoutComponent>{children}</LayoutComponent>
-  </LayoutProvider>
-);
+}: LayoutOptions): React.FC<React.PropsWithChildren> => {
+
+  const _LayoutComponent: React.FC<React.PropsWithChildren> = React.useCallback(({ children }) => {
+    const props = useLayout();
+    return <LayoutComponent {...props}>{children}</LayoutComponent>
+  }, [LayoutComponent]);
+
+  return ({ children }) => (
+    <LayoutProvider components={components}>
+      <_LayoutComponent>{children}</_LayoutComponent>
+    </LayoutProvider>
+  );
+}
