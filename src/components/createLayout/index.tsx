@@ -26,11 +26,14 @@
 import _ from 'lodash';
 import React from 'react';
 
-export const Grid: React.FC<React.PropsWithChildren> = ({ children }) => {
-  
-  return (
-    <div>
-      {children}
-    </div>
-  )
+type LayoutOptions = {
+  layout: React.ComponentType<React.PropsWithChildren>;
+  components: Record<string, React.ComponentType>;
 }
+
+export const createLayout = ({
+  layout: LayoutComponent,
+  ...props
+}: LayoutOptions): React.FC<React.PropsWithChildren> => ({ children }) => (
+  <LayoutComponent {...props}>{children}</LayoutComponent>
+)

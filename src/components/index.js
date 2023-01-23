@@ -23,5 +23,5 @@
 //  THE SOFTWARE.
 //
 
+export * from './createLayout';
 export { LayoutProvider } from './Layout';
-export * from './Grid';
