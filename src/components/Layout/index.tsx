@@ -31,15 +31,11 @@ import * as themes from '../../themes';
 type LayoutProviderProps = {
   theme?: keyof typeof themes;
   components?: Record<string, React.ComponentType>;
-  marginScale?: number;
-  paddingScale?: number;
 };
 
 const LayoutContext = React.createContext<Required<LayoutProviderProps>>({
   theme: 'default',
   components: {},
-  marginScale: 1,
-  paddingScale: 1,
 });
 
 export const LayoutProvider: React.FC<React.PropsWithChildren<LayoutProviderProps>> = ({
