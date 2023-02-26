@@ -24,14 +24,14 @@
 //
 
 import _ from 'lodash';
-import React, { ComponentPropsWithoutRef } from 'react';
+import React from 'react';
 import { ErrorBoundary, Navigator as _Navigator, Route } from '@o2ter/react-ui';
 import NotFound from './pages/NotFound';
 import ErrorPage from './pages/ErrorPage';
 import { useLayout } from '../Layout';
 
 type NavigatorProps = {
-  pages?: ComponentPropsWithoutRef<typeof Route>[]
+  pages?: React.ComponentPropsWithoutRef<typeof Route>[]
 };
 
 export const Navigator: React.FC<NavigatorProps> = ({ pages }) => {
