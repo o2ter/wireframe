@@ -30,7 +30,7 @@ import * as themes from '../../themes';
 
 type LayoutProviderProps = {
   theme?: keyof typeof themes;
-  components?: Record<string, React.ComponentType>;
+  components?: Record<string, React.ComponentType<any>>;
 };
 
 const LayoutContext = React.createContext<Required<LayoutProviderProps>>({

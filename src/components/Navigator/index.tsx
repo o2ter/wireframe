@@ -47,7 +47,7 @@ export const Navigator: React.FC<NavigatorProps> = ({
   const _NotFound = components['NotFound'] ?? NotFound;
 
   return (
-    <ErrorBoundary onError={onError} fallback={<_ErrorPage />}>
+    <ErrorBoundary onError={onError} fallback={(error) => <_ErrorPage error={error} />}>
       <_Navigator>
         {pages?.map(({ path, ...props }) => (
           <Route key={`${id}-${path}`} path={path} {...props} />
