@@ -33,13 +33,11 @@ import { useLayout } from '../Layout';
 type NavigatorProps = {
   pages?: React.ComponentPropsWithoutRef<typeof Route>[];
   onError?: (error: Error, info: React.ErrorInfo) => void;
-  ErrorFallback?: React.ReactNode;
 };
 
 export const Navigator: React.FC<NavigatorProps> = ({
   pages,
   onError,
-  ErrorFallback,
 }) => {
 
   const id = React.useId();
@@ -49,7 +47,7 @@ export const Navigator: React.FC<NavigatorProps> = ({
   const _NotFound = components['NotFound'] ?? NotFound;
 
   return (
-    <ErrorBoundary onError={onError} fallback={ErrorFallback ?? <_ErrorPage />}>
+    <ErrorBoundary onError={onError} fallback={<_ErrorPage />}>
       <_Navigator>
         {pages?.map(({ path, ...props }) => (
           <Route key={`${id}-${path}`} path={path} {...props} />
