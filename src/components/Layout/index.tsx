@@ -61,3 +61,5 @@ export const useLayout = () => {
   const { theme, ...props } = React.useContext(LayoutContext);
   return { theme: themes[theme], ...props };
 };
+
+LayoutProvider.displayName = 'LayoutProvider';

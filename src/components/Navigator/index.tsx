@@ -59,3 +59,5 @@ export const Navigator: React.FC<NavigatorProps> = ({
     </ErrorBoundary>
   );
 };
+
+Navigator.displayName = 'Navigator';
