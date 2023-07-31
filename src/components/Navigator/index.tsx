@@ -52,7 +52,7 @@ export const Navigator: React.FC<NavigatorProps> = ({
         {pages?.map(({ path, ...props }) => (
           <Route key={`${id}-${path}`} path={path} {...props} />
         ))}
-        {_.isNil(_.find(pages, p => p.path === '*')) && (
+        {!_.some(pages, p => p.path === '*') && (
           <Route path='*' title='404 Not Found' statusCode={404} component={_NotFound} />
         )}
       </_Navigator>
