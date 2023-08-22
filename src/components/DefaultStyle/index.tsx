@@ -25,7 +25,7 @@
 
 import _ from 'lodash';
 import React from 'react';
-import { StyleProvider, useTheme } from '@o2ter/react-ui';
+import { StyleProvider, shiftColor, useTheme } from '@o2ter/react-ui';
 import { useWindowDimensions, ViewStyle, TextStyle } from 'react-native';
 
 export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
@@ -188,15 +188,27 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
 
     for (const [k, v] of [..._.toPairs(theme.themeColors), ..._.toPairs(theme.colors)]) {
       styles[`bg-${k}`] = { backgroundColor: v };
+      for (const [w, n] of _.toPairs(theme.colorWeights)) {
+        styles[`bg-${k}-${w}`] = { backgroundColor: shiftColor(v, n) };
+      }
       if (breakpoint) {
         styles[`bg-${breakpoint}-${k}`] = { backgroundColor: v };
+        for (const [w, n] of _.toPairs(theme.colorWeights)) {
+          styles[`bg-${breakpoint}-${k}-${w}`] = { backgroundColor: shiftColor(v, n) };
+        }
       }
     }
 
     for (const [k, v] of [..._.toPairs(theme.themeColors), ..._.toPairs(theme.colors)]) {
       styles[`text-${k}`] = { color: v };
+      for (const [w, n] of _.toPairs(theme.colorWeights)) {
+        styles[`text-${k}-${w}`] = { color: shiftColor(v, n) };
+      }
       if (breakpoint) {
         styles[`text-${breakpoint}-${k}`] = { color: v };
+        for (const [w, n] of _.toPairs(theme.colorWeights)) {
+          styles[`text-${breakpoint}-${k}-${w}`] = { color: shiftColor(v, n) };
+        }
       }
     }
 
