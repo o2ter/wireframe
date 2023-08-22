@@ -128,6 +128,12 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
         styles[`bg${infix}-gray-${k}`] = { backgroundColor: v };
       }
 
+      styles[`text${infix}-auto`] = { textAlign: 'auto' };
+      styles[`text${infix}-left`] = { textAlign: 'left' };
+      styles[`text${infix}-right`] = { textAlign: 'right' };
+      styles[`text${infix}-center`] = { textAlign: 'center' };
+      styles[`text${infix}-justify`] = { textAlign: 'justify' };
+
       for (const [k, v] of [..._.toPairs(theme.themeColors), ..._.toPairs(theme.colors)]) {
         styles[`text${infix}-${k}`] = { color: v };
         for (const [w, n] of _.toPairs(theme.colorWeights)) {
