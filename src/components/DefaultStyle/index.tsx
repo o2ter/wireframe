@@ -86,39 +86,39 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
 
     for (const [k, v] of _.toPairs(theme.spacers)) {
       styles[`p-${k}`] = { padding: v };
+      styles[`px-${k}`] = { paddingHorizontal: v };
+      styles[`py-${k}`] = { paddingVertical: v };
       styles[`pt-${k}`] = { paddingTop: v };
       styles[`pb-${k}`] = { paddingBottom: v };
       styles[`ps-${k}`] = { paddingStart: v };
       styles[`pe-${k}`] = { paddingEnd: v };
-      styles[`px-${k}`] = { paddingHorizontal: v };
-      styles[`py-${k}`] = { paddingVertical: v };
       if (breakpoint) {
         styles[`p-${breakpoint}-${k}`] = { padding: v };
+        styles[`px-${breakpoint}-${k}`] = { paddingHorizontal: v };
+        styles[`py-${breakpoint}-${k}`] = { paddingVertical: v };
         styles[`pt-${breakpoint}-${k}`] = { paddingTop: v };
         styles[`pb-${breakpoint}-${k}`] = { paddingBottom: v };
         styles[`ps-${breakpoint}-${k}`] = { paddingStart: v };
         styles[`pe-${breakpoint}-${k}`] = { paddingEnd: v };
-        styles[`px-${breakpoint}-${k}`] = { paddingHorizontal: v };
-        styles[`py-${breakpoint}-${k}`] = { paddingVertical: v };
       }
     }
 
     for (const [k, v] of _.toPairs(theme.spacers)) {
       styles[`m-${k}`] = { margin: v };
+      styles[`mx-${k}`] = { marginHorizontal: v };
+      styles[`my-${k}`] = { marginVertical: v };
       styles[`mt-${k}`] = { marginTop: v };
       styles[`mb-${k}`] = { marginBottom: v };
       styles[`ms-${k}`] = { marginStart: v };
       styles[`me-${k}`] = { marginEnd: v };
-      styles[`mx-${k}`] = { marginHorizontal: v };
-      styles[`my-${k}`] = { marginVertical: v };
       if (breakpoint) {
         styles[`m-${breakpoint}-${k}`] = { margin: v };
+        styles[`mx-${breakpoint}-${k}`] = { marginHorizontal: v };
+        styles[`my-${breakpoint}-${k}`] = { marginVertical: v };
         styles[`mt-${breakpoint}-${k}`] = { marginTop: v };
         styles[`mb-${breakpoint}-${k}`] = { marginBottom: v };
         styles[`ms-${breakpoint}-${k}`] = { marginStart: v };
         styles[`me-${breakpoint}-${k}`] = { marginEnd: v };
-        styles[`mx-${breakpoint}-${k}`] = { marginHorizontal: v };
-        styles[`my-${breakpoint}-${k}`] = { marginVertical: v };
       }
     }
 
