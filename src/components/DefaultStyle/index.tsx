@@ -141,6 +141,13 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
     }
 
     for (const [k, v] of _.toPairs(theme.spacers)) {
+      styles[`gap-${k}`] = { gap: v };
+      if (breakpoint) {
+        styles[`gap-${breakpoint}-${k}`] = { gap: v };
+      }
+    }
+
+    for (const [k, v] of _.toPairs(theme.spacers)) {
       styles[`p-${k}`] = { padding: v };
       styles[`px-${k}`] = { paddingHorizontal: v };
       styles[`py-${k}`] = { paddingVertical: v };
