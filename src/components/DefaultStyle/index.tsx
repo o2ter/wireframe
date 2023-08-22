@@ -35,6 +35,16 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
 
     const [breakpoint] = _.minBy(_.filter(_.toPairs(theme.breakpoints), ([, v]) => windowDimensions.width >= v), ([, v]) => v) ?? [];
 
+    const base_colors = [
+      ..._.toPairs(theme.themeColors), 
+      ..._.toPairs(theme.colors),
+    ];
+    const colors = [
+      ...base_colors,
+      ..._.flatMap(base_colors, ([k, v]) => _.map(theme.colorWeights, (s, w) => [`${k}-${w}`, shiftColor(v, s)])),
+      ..._.toPairs(theme.grays),
+    ];
+
     const createStyle = (infix: string) => {
 
       const styles: Record<string, ViewStyle | TextStyle> = {};
@@ -91,10 +101,6 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       styles[`h${infix}-100`] = { height: '100%' };
 
       for (const [k, v] of _.toPairs(theme.spacers)) {
-        styles[`gap${infix}-${k}`] = { gap: v };
-      }
-
-      for (const [k, v] of _.toPairs(theme.spacers)) {
         styles[`p${infix}-${k}`] = { padding: v };
         styles[`px${infix}-${k}`] = { paddingHorizontal: v };
         styles[`py${infix}-${k}`] = { paddingVertical: v };
@@ -104,9 +110,6 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
         styles[`pe${infix}-${k}`] = { paddingEnd: v };
         styles[`pl${infix}-${k}`] = { paddingLeft: v };
         styles[`pr${infix}-${k}`] = { paddingRight: v };
-      }
-
-      for (const [k, v] of _.toPairs(theme.spacers)) {
         styles[`m${infix}-${k}`] = { margin: v };
         styles[`mx${infix}-${k}`] = { marginHorizontal: v };
         styles[`my${infix}-${k}`] = { marginVertical: v };
@@ -116,16 +119,11 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
         styles[`me${infix}-${k}`] = { marginEnd: v };
         styles[`ml${infix}-${k}`] = { marginLeft: v };
         styles[`mr${infix}-${k}`] = { marginRight: v };
+        styles[`gap${infix}-${k}`] = { gap: v };
       }
 
-      for (const [k, v] of [..._.toPairs(theme.themeColors), ..._.toPairs(theme.colors)]) {
+      for (const [k, v] of colors) {
         styles[`bg${infix}-${k}`] = { backgroundColor: v };
-        for (const [w, n] of _.toPairs(theme.colorWeights)) {
-          styles[`bg${infix}-${k}-${w}`] = { backgroundColor: shiftColor(v, n) };
-        }
-      }
-      for (const [k, v] of _.toPairs(theme.grays)) {
-        styles[`bg${infix}-gray-${k}`] = { backgroundColor: v };
       }
 
       styles[`text${infix}-auto`] = { textAlign: 'auto' };
@@ -151,14 +149,8 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
         styles[`fw${infix}-${k}`] = { fontWeight: v };
       }
 
-      for (const [k, v] of [..._.toPairs(theme.themeColors), ..._.toPairs(theme.colors)]) {
+      for (const [k, v] of colors) {
         styles[`text${infix}-${k}`] = { color: v };
-        for (const [w, n] of _.toPairs(theme.colorWeights)) {
-          styles[`text${infix}-${k}-${w}`] = { color: shiftColor(v, n) };
-        }
-      }
-      for (const [k, v] of _.toPairs(theme.grays)) {
-        styles[`text${infix}-gray-${k}`] = { color: v };
       }
 
       styles[`border${infix}`] = { borderWidth: theme.borderWidth };
@@ -187,14 +179,8 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
         styles[`border${infix}-right-${k}`] = { borderRightWidth: v };
       }
 
-      for (const [k, v] of [..._.toPairs(theme.themeColors), ..._.toPairs(theme.colors)]) {
+      for (const [k, v] of colors) {
         styles[`border${infix}-${k}`] = { borderColor: v };
-        for (const [w, n] of _.toPairs(theme.colorWeights)) {
-          styles[`border${infix}-${k}-${w}`] = { borderColor: shiftColor(v, n) };
-        }
-      }
-      for (const [k, v] of _.toPairs(theme.grays)) {
-        styles[`border${infix}-gray-${k}`] = { borderColor: v };
       }
 
       styles[`rounded${infix}`] = { borderRadius: theme.borderRadiusBase };
