@@ -144,11 +144,11 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       for (const [k, v] of _.toPairs(theme.fontSizes)) {
         styles[`fs${infix}-${k}`] = { fontSize: v };
       }
-      for (const [k, v] of _.toPairs(theme.fontWeights)) {
-        styles[`fw${infix}-${k}`] = { fontWeight: v };
-      }
       for (const [k, v] of _.toPairs(theme.displayFontSizes)) {
         styles[`display${infix}-${k}`] = { fontSize: v, fontWeight: theme.displayFontWeight };
+      }
+      for (const [k, v] of _.toPairs(theme.fontWeights)) {
+        styles[`fw${infix}-${k}`] = { fontWeight: v };
       }
 
       for (const [k, v] of [..._.toPairs(theme.themeColors), ..._.toPairs(theme.colors)]) {
