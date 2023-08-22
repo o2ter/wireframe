@@ -141,6 +141,9 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       styles[`text-decoration${infix}-none`] = { textDecorationLine: 'none' };
       styles[`text-decoration${infix}-underline`] = { textDecorationLine: 'underline' };
       styles[`text-decoration${infix}-line-through`] = { textDecorationLine: 'line-through' };
+      for (const [k, v] of _.toPairs(theme.fontSizes)) {
+        styles[`fs${infix}-${k}`] = { fontSize: v };
+      }
       for (const [k, v] of _.toPairs(theme.fontWeights)) {
         styles[`fw${infix}-${k}`] = { fontWeight: v };
       }
