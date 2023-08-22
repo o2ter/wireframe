@@ -26,8 +26,7 @@
 import _ from 'lodash';
 import React from 'react';
 import { StyleProvider, useTheme } from '@o2ter/react-ui';
-import { useWindowDimensions } from 'react-native';
-import { ViewStyle } from 'react-native';
+import { useWindowDimensions, ViewStyle } from 'react-native';
 
 export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   const theme = useTheme();
