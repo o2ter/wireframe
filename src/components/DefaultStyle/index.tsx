@@ -38,10 +38,18 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
     const styles: Record<string, ViewStyle | TextStyle> = {
       'd-none': { display: 'none' },
       'd-flex': { display: 'flex' },
+      'flex-row': { flexDirection: 'row' },
+      'flex-column': { flexDirection: 'column' },
+      'flex-row-reverse': { flexDirection: 'row-reverse' },
+      'flex-column-reverse': { flexDirection: 'column-reverse' },
     };
     if (breakpoint) {
       styles[`d-${breakpoint}-none`] = { display: 'none' };
       styles[`d-${breakpoint}-flex`] = { display: 'flex' };
+      styles[`flex-${breakpoint}-row`] = { flexDirection: 'row' };
+      styles[`flex-${breakpoint}-column`] = { flexDirection: 'column' };
+      styles[`flex-${breakpoint}-row-reverse`] = { flexDirection: 'row-reverse' };
+      styles[`flex-${breakpoint}-column-reverse`] = { flexDirection: 'column-reverse' };
     }
 
     for (const [k, v] of _.toPairs(theme.spacers)) {
