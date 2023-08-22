@@ -42,6 +42,22 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       'flex-column': { flexDirection: 'column' },
       'flex-row-reverse': { flexDirection: 'row-reverse' },
       'flex-column-reverse': { flexDirection: 'column-reverse' },
+      'align-content-start': { alignContent: 'flex-start' },
+      'align-content-end': { alignContent: 'flex-end' },
+      'align-content-center': { alignContent: 'center' },
+      'align-content-stretch': { alignContent: 'stretch' },
+      'align-content-between': { alignContent: 'space-between' },
+      'align-content-around': { alignContent: 'space-around' },
+      'align-items-start': { alignItems: 'flex-start' },
+      'align-items-end': { alignItems: 'flex-end' },
+      'align-items-center': { alignItems: 'center' },
+      'align-items-stretch': { alignItems: 'stretch' },
+      'align-items-baseline': { alignItems: 'baseline' },
+      'align-self-start': { alignSelf: 'flex-start' },
+      'align-self-end': { alignSelf: 'flex-end' },
+      'align-self-center': { alignSelf: 'center' },
+      'align-self-stretch': { alignSelf: 'stretch' },
+      'align-self-baseline': { alignSelf: 'baseline' },
     };
     if (breakpoint) {
       styles[`d-${breakpoint}-none`] = { display: 'none' };
@@ -50,6 +66,22 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       styles[`flex-${breakpoint}-column`] = { flexDirection: 'column' };
       styles[`flex-${breakpoint}-row-reverse`] = { flexDirection: 'row-reverse' };
       styles[`flex-${breakpoint}-column-reverse`] = { flexDirection: 'column-reverse' };
+      styles[`align-content-${breakpoint}-start`] = { alignContent: 'flex-start' };
+      styles[`align-content-${breakpoint}-end`] = { alignContent: 'flex-end' };
+      styles[`align-content-${breakpoint}-center`] = { alignContent: 'center' };
+      styles[`align-content-${breakpoint}-stretch`] = { alignContent: 'stretch' };
+      styles[`align-content-${breakpoint}-between`] = { alignContent: 'space-between' };
+      styles[`align-content-${breakpoint}-around`] = { alignContent: 'space-around' };
+      styles[`align-items-${breakpoint}-start`] = { alignItems: 'flex-start' };
+      styles[`align-items-${breakpoint}-end`] = { alignItems: 'flex-end' };
+      styles[`align-items-${breakpoint}-center`] = { alignItems: 'center' };
+      styles[`align-items-${breakpoint}-stretch`] = { alignItems: 'stretch' };
+      styles[`align-items-${breakpoint}-baseline`] = { alignItems: 'baseline' };
+      styles[`align-self-${breakpoint}-start`] = { alignSelf: 'flex-start' };
+      styles[`align-self-${breakpoint}-end`] = { alignSelf: 'flex-end' };
+      styles[`align-self-${breakpoint}-center`] = { alignSelf: 'center' };
+      styles[`align-self-${breakpoint}-stretch`] = { alignSelf: 'stretch' };
+      styles[`align-self-${breakpoint}-baseline`] = { alignSelf: 'baseline' };
     }
 
     for (const [k, v] of _.toPairs(theme.spacers)) {
