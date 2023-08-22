@@ -26,7 +26,7 @@
 import _ from 'lodash';
 import React from 'react';
 import { StyleProvider, useTheme } from '@o2ter/react-ui';
-import { useWindowDimensions, ViewStyle } from 'react-native';
+import { useWindowDimensions, ViewStyle, TextStyle } from 'react-native';
 
 export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   const theme = useTheme();
@@ -71,9 +71,25 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
         margins[`my-${breakpoint}-${k}`] = { marginVertical: v };
       }
     }
+    const backgrounds: Record<string, ViewStyle> = {};
+    for (const [k, v] of [..._.toPairs(theme.themeColors), ..._.toPairs(theme.colors)]) {
+      backgrounds[`bg-${k}`] = { backgroundColor: v };
+      if (breakpoint) {
+        backgrounds[`bg-${breakpoint}-${k}`] = { backgroundColor: v };
+      }
+    }
+    const texts: Record<string, TextStyle> = {};
+    for (const [k, v] of [..._.toPairs(theme.themeColors), ..._.toPairs(theme.colors)]) {
+      texts[`bg-${k}`] = { color: v };
+      if (breakpoint) {
+        texts[`bg-${breakpoint}-${k}`] = { color: v };
+      }
+    }
     return {
       ...paddings,
       ...margins,
+      ...backgrounds,
+      ...texts,
     };
   }, [theme]);
   return (
