@@ -40,6 +40,10 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       ..._.toPairs(theme.colors),
     ];
     const colors = [
+      ..._.toPairs({
+        black: '#000000',
+        white: '#ffffff',
+      }),
       ...base_colors,
       ..._.flatMap(base_colors, ([k, v]) => _.map(theme.colorWeights, (s, w) => [`${k}-${w}`, shiftColor(v, s)])),
       ..._.toPairs(theme.grays),
