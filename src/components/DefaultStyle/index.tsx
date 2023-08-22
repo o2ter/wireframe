@@ -165,6 +165,86 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
         }
       }
 
+      styles[`rounded${infix}`] = { borderRadius: theme.borderRadiusBase };
+      styles[`rounded${infix}-top`] = {
+        borderTopLeftRadius: theme.borderRadiusBase,
+        borderTopRightRadius: theme.borderRadiusBase,
+      };
+      styles[`rounded${infix}-bottom`] = {
+        borderBottomLeftRadius: theme.borderRadiusBase,
+        borderBottomRightRadius: theme.borderRadiusBase,
+      };
+      styles[`rounded${infix}-start`] = {
+        borderTopStartRadius: theme.borderRadiusBase,
+        borderBottomStartRadius: theme.borderRadiusBase,
+      };
+      styles[`rounded${infix}-end`] = {
+        borderTopEndRadius: theme.borderRadiusBase,
+        borderBottomEndRadius: theme.borderRadiusBase,
+      };
+      styles[`rounded${infix}-left`] = {
+        borderTopLeftRadius: theme.borderRadiusBase,
+        borderBottomLeftRadius: theme.borderRadiusBase,
+      };
+      styles[`rounded${infix}-right`] = {
+        borderTopRightRadius: theme.borderRadiusBase,
+        borderBottomRightRadius: theme.borderRadiusBase,
+      };
+
+      styles[`rounded${infix}-0`] = { borderRadius: 0 };
+      styles[`rounded${infix}-top-0`] = {
+        borderTopLeftRadius: 0,
+        borderTopRightRadius: 0,
+      };
+      styles[`rounded${infix}-bottom-0`] = {
+        borderBottomLeftRadius: 0,
+        borderBottomRightRadius: 0,
+      };
+      styles[`rounded${infix}-start-0`] = {
+        borderTopStartRadius: 0,
+        borderBottomStartRadius: 0,
+      };
+      styles[`rounded${infix}-end-0`] = {
+        borderTopEndRadius: 0,
+        borderBottomEndRadius: 0,
+      };
+      styles[`rounded${infix}-left-0`] = {
+        borderTopLeftRadius: 0,
+        borderBottomLeftRadius: 0,
+      };
+      styles[`rounded${infix}-right-0`] = {
+        borderTopRightRadius: 0,
+        borderBottomRightRadius: 0,
+      };
+
+      for (const [k, v] of _.toPairs(theme.borderRadius)) {
+        styles[`rounded${infix}-${k}`] = { borderRadius: v };
+        styles[`rounded${infix}-top-${k}`] = {
+          borderTopLeftRadius: v,
+          borderTopRightRadius: v,
+        };
+        styles[`rounded${infix}-bottom-${k}`] = {
+          borderBottomLeftRadius: v,
+          borderBottomRightRadius: v,
+        };
+        styles[`rounded${infix}-start-${k}`] = {
+          borderTopStartRadius: v,
+          borderBottomStartRadius: v,
+        };
+        styles[`rounded${infix}-end-${k}`] = {
+          borderTopEndRadius: v,
+          borderBottomEndRadius: v,
+        };
+        styles[`rounded${infix}-left-${k}`] = {
+          borderTopLeftRadius: v,
+          borderBottomLeftRadius: v,
+        };
+        styles[`rounded${infix}-right-${k}`] = {
+          borderTopRightRadius: v,
+          borderBottomRightRadius: v,
+        };
+      }
+
       for (const [k, v] of _.toPairs(theme.zIndex)) {
         styles[`zindex${infix}-${k}`] = { zIndex: v };
       }
