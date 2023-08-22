@@ -275,7 +275,7 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       ...createStyle(`-${breakpoint}`),
     } : createStyle('');
 
-  }, [theme]);
+  }, [theme, windowDimensions.width]);
   return (
     <StyleProvider classes={styles}>{children}</StyleProvider>
   );
