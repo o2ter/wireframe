@@ -80,9 +80,9 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
     }
     const texts: Record<string, TextStyle> = {};
     for (const [k, v] of [..._.toPairs(theme.themeColors), ..._.toPairs(theme.colors)]) {
-      texts[`bg-${k}`] = { color: v };
+      texts[`text-${k}`] = { color: v };
       if (breakpoint) {
-        texts[`bg-${breakpoint}-${k}`] = { color: v };
+        texts[`text-${breakpoint}-${k}`] = { color: v };
       }
     }
     return {
