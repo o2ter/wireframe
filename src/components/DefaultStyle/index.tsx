@@ -32,65 +32,79 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
   const theme = useTheme();
   const windowDimensions = useWindowDimensions();
   const styles = React.useMemo(() => {
-    const [breakpoint] = _.minBy(_.filter(_.toPairs(theme.breakpoints), ([,v]) => windowDimensions.width >= v), ([,v]) => v) ?? [];
-    const paddings: Record<string, ViewStyle> = {};
-    for (const [k, v] of _.toPairs(theme.spacers)) {
-      paddings[`p-${k}`] = { padding: v };
-      paddings[`pt-${k}`] = { paddingTop: v };
-      paddings[`pb-${k}`] = { paddingBottom: v };
-      paddings[`ps-${k}`] = { paddingStart: v };
-      paddings[`pe-${k}`] = { paddingEnd: v };
-      paddings[`px-${k}`] = { paddingHorizontal: v };
-      paddings[`py-${k}`] = { paddingVertical: v };
-      if (breakpoint) {
-        paddings[`p-${breakpoint}-${k}`] = { padding: v };
-        paddings[`pt-${breakpoint}-${k}`] = { paddingTop: v };
-        paddings[`pb-${breakpoint}-${k}`] = { paddingBottom: v };
-        paddings[`ps-${breakpoint}-${k}`] = { paddingStart: v };
-        paddings[`pe-${breakpoint}-${k}`] = { paddingEnd: v };
-        paddings[`px-${breakpoint}-${k}`] = { paddingHorizontal: v };
-        paddings[`py-${breakpoint}-${k}`] = { paddingVertical: v };
-      }
-    }
-    const margins: Record<string, ViewStyle> = {};
-    for (const [k, v] of _.toPairs(theme.spacers)) {
-      margins[`m-${k}`] = { margin: v };
-      margins[`mt-${k}`] = { marginTop: v };
-      margins[`mb-${k}`] = { marginBottom: v };
-      margins[`ms-${k}`] = { marginStart: v };
-      margins[`me-${k}`] = { marginEnd: v };
-      margins[`mx-${k}`] = { marginHorizontal: v };
-      margins[`my-${k}`] = { marginVertical: v };
-      if (breakpoint) {
-        margins[`m-${breakpoint}-${k}`] = { margin: v };
-        margins[`mt-${breakpoint}-${k}`] = { marginTop: v };
-        margins[`mb-${breakpoint}-${k}`] = { marginBottom: v };
-        margins[`ms-${breakpoint}-${k}`] = { marginStart: v };
-        margins[`me-${breakpoint}-${k}`] = { marginEnd: v };
-        margins[`mx-${breakpoint}-${k}`] = { marginHorizontal: v };
-        margins[`my-${breakpoint}-${k}`] = { marginVertical: v };
-      }
-    }
-    const backgrounds: Record<string, ViewStyle> = {};
-    for (const [k, v] of [..._.toPairs(theme.themeColors), ..._.toPairs(theme.colors)]) {
-      backgrounds[`bg-${k}`] = { backgroundColor: v };
-      if (breakpoint) {
-        backgrounds[`bg-${breakpoint}-${k}`] = { backgroundColor: v };
-      }
-    }
-    const texts: Record<string, TextStyle> = {};
-    for (const [k, v] of [..._.toPairs(theme.themeColors), ..._.toPairs(theme.colors)]) {
-      texts[`text-${k}`] = { color: v };
-      if (breakpoint) {
-        texts[`text-${breakpoint}-${k}`] = { color: v };
-      }
-    }
-    return {
-      ...paddings,
-      ...margins,
-      ...backgrounds,
-      ...texts,
+
+    const [breakpoint] = _.minBy(_.filter(_.toPairs(theme.breakpoints), ([, v]) => windowDimensions.width >= v), ([, v]) => v) ?? [];
+
+    const styles: Record<string, ViewStyle | TextStyle> = {
+      'd-none': { display: 'none' },
+      'd-flex': { display: 'flex' },
     };
+    if (breakpoint) {
+      styles[`d-${breakpoint}-none`] = { display: 'none' };
+      styles[`d-${breakpoint}-flex`] = { display: 'flex' };
+    }
+
+    for (const [k, v] of _.toPairs(theme.spacers)) {
+      styles[`p-${k}`] = { padding: v };
+      styles[`pt-${k}`] = { paddingTop: v };
+      styles[`pb-${k}`] = { paddingBottom: v };
+      styles[`ps-${k}`] = { paddingStart: v };
+      styles[`pe-${k}`] = { paddingEnd: v };
+      styles[`px-${k}`] = { paddingHorizontal: v };
+      styles[`py-${k}`] = { paddingVertical: v };
+      if (breakpoint) {
+        styles[`p-${breakpoint}-${k}`] = { padding: v };
+        styles[`pt-${breakpoint}-${k}`] = { paddingTop: v };
+        styles[`pb-${breakpoint}-${k}`] = { paddingBottom: v };
+        styles[`ps-${breakpoint}-${k}`] = { paddingStart: v };
+        styles[`pe-${breakpoint}-${k}`] = { paddingEnd: v };
+        styles[`px-${breakpoint}-${k}`] = { paddingHorizontal: v };
+        styles[`py-${breakpoint}-${k}`] = { paddingVertical: v };
+      }
+    }
+
+    for (const [k, v] of _.toPairs(theme.spacers)) {
+      styles[`m-${k}`] = { margin: v };
+      styles[`mt-${k}`] = { marginTop: v };
+      styles[`mb-${k}`] = { marginBottom: v };
+      styles[`ms-${k}`] = { marginStart: v };
+      styles[`me-${k}`] = { marginEnd: v };
+      styles[`mx-${k}`] = { marginHorizontal: v };
+      styles[`my-${k}`] = { marginVertical: v };
+      if (breakpoint) {
+        styles[`m-${breakpoint}-${k}`] = { margin: v };
+        styles[`mt-${breakpoint}-${k}`] = { marginTop: v };
+        styles[`mb-${breakpoint}-${k}`] = { marginBottom: v };
+        styles[`ms-${breakpoint}-${k}`] = { marginStart: v };
+        styles[`me-${breakpoint}-${k}`] = { marginEnd: v };
+        styles[`mx-${breakpoint}-${k}`] = { marginHorizontal: v };
+        styles[`my-${breakpoint}-${k}`] = { marginVertical: v };
+      }
+    }
+
+    for (const [k, v] of [..._.toPairs(theme.themeColors), ..._.toPairs(theme.colors)]) {
+      styles[`bg-${k}`] = { backgroundColor: v };
+      if (breakpoint) {
+        styles[`bg-${breakpoint}-${k}`] = { backgroundColor: v };
+      }
+    }
+
+    for (const [k, v] of [..._.toPairs(theme.themeColors), ..._.toPairs(theme.colors)]) {
+      styles[`text-${k}`] = { color: v };
+      if (breakpoint) {
+        styles[`text-${breakpoint}-${k}`] = { color: v };
+      }
+    }
+
+    for (const [k, v] of _.toPairs(theme.zIndex)) {
+      styles[`zindex-${k}`] = { zIndex: v };
+      if (breakpoint) {
+        styles[`zindex-${breakpoint}-${k}`] = { zIndex: v };
+      }
+    }
+
+    return styles;
+
   }, [theme]);
   return (
     <StyleProvider classes={styles}>{children}</StyleProvider>
