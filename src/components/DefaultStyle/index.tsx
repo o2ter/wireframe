@@ -58,6 +58,26 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       'align-self-center': { alignSelf: 'center' },
       'align-self-stretch': { alignSelf: 'stretch' },
       'align-self-baseline': { alignSelf: 'baseline' },
+      'position-relative': { position: 'relative' },
+      'position-absolute': { position: 'absolute' },
+      'top-0': { top: 0 },
+      'top-50': { top: '50%' },
+      'top-100': { top: '100%' },
+      'bottom-0': { bottom: 0 },
+      'bottom-50': { bottom: '50%' },
+      'bottom-100': { bottom: '100%' },
+      'start-0': { start: 0 },
+      'start-50': { start: '50%' },
+      'start-100': { start: '100%' },
+      'end-0': { end: 0 },
+      'end-50': { end: '50%' },
+      'end-100': { end: '100%' },
+      'left-0': { left: 0 },
+      'left-50': { left: '50%' },
+      'left-100': { left: '100%' },
+      'right-0': { right: 0 },
+      'right-50': { right: '50%' },
+      'right-100': { right: '100%' },
     };
     if (breakpoint) {
       styles[`d-${breakpoint}-none`] = { display: 'none' };
@@ -82,6 +102,8 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       styles[`align-self-${breakpoint}-center`] = { alignSelf: 'center' };
       styles[`align-self-${breakpoint}-stretch`] = { alignSelf: 'stretch' };
       styles[`align-self-${breakpoint}-baseline`] = { alignSelf: 'baseline' };
+      styles[`position-${breakpoint}-relative`] = { position: 'relative' };
+      styles[`position-${breakpoint}-absolute`] = { position: 'absolute' };
     }
 
     for (const [k, v] of _.toPairs(theme.spacers)) {
@@ -92,6 +114,8 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       styles[`pb-${k}`] = { paddingBottom: v };
       styles[`ps-${k}`] = { paddingStart: v };
       styles[`pe-${k}`] = { paddingEnd: v };
+      styles[`pl-${k}`] = { paddingLeft: v };
+      styles[`pr-${k}`] = { paddingRight: v };
       if (breakpoint) {
         styles[`p-${breakpoint}-${k}`] = { padding: v };
         styles[`px-${breakpoint}-${k}`] = { paddingHorizontal: v };
@@ -100,6 +124,8 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
         styles[`pb-${breakpoint}-${k}`] = { paddingBottom: v };
         styles[`ps-${breakpoint}-${k}`] = { paddingStart: v };
         styles[`pe-${breakpoint}-${k}`] = { paddingEnd: v };
+        styles[`pl-${breakpoint}-${k}`] = { paddingLeft: v };
+        styles[`pr-${breakpoint}-${k}`] = { paddingRight: v };
       }
     }
 
@@ -111,6 +137,8 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       styles[`mb-${k}`] = { marginBottom: v };
       styles[`ms-${k}`] = { marginStart: v };
       styles[`me-${k}`] = { marginEnd: v };
+      styles[`ml-${k}`] = { marginLeft: v };
+      styles[`mr-${k}`] = { marginRight: v };
       if (breakpoint) {
         styles[`m-${breakpoint}-${k}`] = { margin: v };
         styles[`mx-${breakpoint}-${k}`] = { marginHorizontal: v };
@@ -119,6 +147,8 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
         styles[`mb-${breakpoint}-${k}`] = { marginBottom: v };
         styles[`ms-${breakpoint}-${k}`] = { marginStart: v };
         styles[`me-${breakpoint}-${k}`] = { marginEnd: v };
+        styles[`ml-${breakpoint}-${k}`] = { marginLeft: v };
+        styles[`mr-${breakpoint}-${k}`] = { marginRight: v };
       }
     }
 
