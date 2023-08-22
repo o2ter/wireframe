@@ -136,6 +136,14 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       styles[`text${infix}-lowercase`] = { textTransform: 'lowercase' };
       styles[`text${infix}-uppercase`] = { textTransform: 'uppercase' };
       styles[`text${infix}-capitalize`] = { textTransform: 'capitalize' };
+      styles[`fst${infix}-normal`] = { fontStyle: 'normal' };
+      styles[`fst${infix}-italic`] = { fontStyle: 'italic' };
+      styles[`text-decoration${infix}-none`] = { textDecorationLine: 'none' };
+      styles[`text-decoration${infix}-underline`] = { textDecorationLine: 'underline' };
+      styles[`text-decoration${infix}-line-through`] = { textDecorationLine: 'line-through' };
+      for (const [k, v] of _.toPairs(theme.fontWeights)) {
+        styles[`fw${infix}-${k}`] = { fontWeight: v };
+      }
 
       for (const [k, v] of [..._.toPairs(theme.themeColors), ..._.toPairs(theme.colors)]) {
         styles[`text${infix}-${k}`] = { color: v };
