@@ -26,12 +26,14 @@
 import _ from 'lodash';
 import React from 'react';
 import { StyleProvider, useTheme } from '@o2ter/react-ui';
+import { useWindowDimensions } from 'react-native';
 import { ViewStyle } from 'react-native';
 
 export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   const theme = useTheme();
+  const windowDimensions = useWindowDimensions();
   const styles = React.useMemo(() => {
-
+    const [breakpoint] = _.minBy(_.filter(_.toPairs(theme.breakpoints), ([,v]) => windowDimensions.width >= v), ([,v]) => v) ?? [];
     const paddings: Record<string, ViewStyle> = {};
     for (const [k, v] of _.toPairs(theme.spacers)) {
       paddings[`p-${k}`] = { padding: v };
@@ -41,8 +43,16 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       paddings[`pe-${k}`] = { paddingEnd: v };
       paddings[`px-${k}`] = { paddingHorizontal: v };
       paddings[`py-${k}`] = { paddingVertical: v };
+      if (breakpoint) {
+        paddings[`p-${breakpoint}-${k}`] = { padding: v };
+        paddings[`pt-${breakpoint}-${k}`] = { paddingTop: v };
+        paddings[`pb-${breakpoint}-${k}`] = { paddingBottom: v };
+        paddings[`ps-${breakpoint}-${k}`] = { paddingStart: v };
+        paddings[`pe-${breakpoint}-${k}`] = { paddingEnd: v };
+        paddings[`px-${breakpoint}-${k}`] = { paddingHorizontal: v };
+        paddings[`py-${breakpoint}-${k}`] = { paddingVertical: v };
+      }
     }
-
     const margins: Record<string, ViewStyle> = {};
     for (const [k, v] of _.toPairs(theme.spacers)) {
       margins[`m-${k}`] = { margin: v };
@@ -52,8 +62,16 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       margins[`me-${k}`] = { marginEnd: v };
       margins[`mx-${k}`] = { marginHorizontal: v };
       margins[`my-${k}`] = { marginVertical: v };
+      if (breakpoint) {
+        margins[`m-${breakpoint}-${k}`] = { margin: v };
+        margins[`mt-${breakpoint}-${k}`] = { marginTop: v };
+        margins[`mb-${breakpoint}-${k}`] = { marginBottom: v };
+        margins[`ms-${breakpoint}-${k}`] = { marginStart: v };
+        margins[`me-${breakpoint}-${k}`] = { marginEnd: v };
+        margins[`mx-${breakpoint}-${k}`] = { marginHorizontal: v };
+        margins[`my-${breakpoint}-${k}`] = { marginVertical: v };
+      }
     }
-
     return {
       ...paddings,
       ...margins,
