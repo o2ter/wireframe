@@ -78,6 +78,14 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       'right-0': { right: 0 },
       'right-50': { right: '50%' },
       'right-100': { right: '100%' },
+      'w-25': { width: '25%' },
+      'w-50': { width: '50%' },
+      'w-75': { width: '75%' },
+      'w-100': { width: '100%' },
+      'h-25': { height: '25%' },
+      'h-50': { height: '50%' },
+      'h-75': { height: '75%' },
+      'h-100': { height: '100%' },
     };
     if (breakpoint) {
       styles[`d-${breakpoint}-none`] = { display: 'none' };
@@ -104,6 +112,32 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       styles[`align-self-${breakpoint}-baseline`] = { alignSelf: 'baseline' };
       styles[`position-${breakpoint}-relative`] = { position: 'relative' };
       styles[`position-${breakpoint}-absolute`] = { position: 'absolute' };
+      styles[`top-${breakpoint}-0`] = { top: 0 };
+      styles[`top-${breakpoint}-50`] = { top: '50%' };
+      styles[`top-${breakpoint}-100`] = { top: '100%' };
+      styles[`bottom-${breakpoint}-0`] = { bottom: 0 };
+      styles[`bottom-${breakpoint}-50`] = { bottom: '50%' };
+      styles[`bottom-${breakpoint}-100`] = { bottom: '100%' };
+      styles[`start-${breakpoint}-0`] = { start: 0 };
+      styles[`start-${breakpoint}-50`] = { start: '50%' };
+      styles[`start-${breakpoint}-100`] = { start: '100%' };
+      styles[`end-${breakpoint}-0`] = { end: 0 };
+      styles[`end-${breakpoint}-50`] = { end: '50%' };
+      styles[`end-${breakpoint}-100`] = { end: '100%' };
+      styles[`left-${breakpoint}-0`] = { left: 0 };
+      styles[`left-${breakpoint}-50`] = { left: '50%' };
+      styles[`left-${breakpoint}-100`] = { left: '100%' };
+      styles[`right-${breakpoint}-0`] = { right: 0 };
+      styles[`right-${breakpoint}-50`] = { right: '50%' };
+      styles[`right-${breakpoint}-100`] = { right: '100%' };
+      styles[`w-${breakpoint}-25`] = { width: '25%' };
+      styles[`w-${breakpoint}-50`] = { width: '50%' };
+      styles[`w-${breakpoint}-75`] = { width: '75%' };
+      styles[`w-${breakpoint}-100`] = { width: '100%' };
+      styles[`h-${breakpoint}-25`] = { height: '25%' };
+      styles[`h-${breakpoint}-50`] = { height: '50%' };
+      styles[`h-${breakpoint}-75`] = { height: '75%' };
+      styles[`h-${breakpoint}-100`] = { height: '100%' };
     }
 
     for (const [k, v] of _.toPairs(theme.spacers)) {
