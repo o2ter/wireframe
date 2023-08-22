@@ -133,6 +133,9 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       styles[`text${infix}-right`] = { textAlign: 'right' };
       styles[`text${infix}-center`] = { textAlign: 'center' };
       styles[`text${infix}-justify`] = { textAlign: 'justify' };
+      styles[`text${infix}-lowercase`] = { textTransform: 'lowercase' };
+      styles[`text${infix}-uppercase`] = { textTransform: 'uppercase' };
+      styles[`text${infix}-capitalize`] = { textTransform: 'capitalize' };
 
       for (const [k, v] of [..._.toPairs(theme.themeColors), ..._.toPairs(theme.colors)]) {
         styles[`text${infix}-${k}`] = { color: v };
