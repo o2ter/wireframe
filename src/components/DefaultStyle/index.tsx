@@ -124,12 +124,18 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
           styles[`bg${infix}-${k}-${w}`] = { backgroundColor: shiftColor(v, n) };
         }
       }
+      for (const [k, v] of _.toPairs(theme.grays)) {
+        styles[`bg${infix}-gray-${k}`] = { backgroundColor: v };
+      }
 
       for (const [k, v] of [..._.toPairs(theme.themeColors), ..._.toPairs(theme.colors)]) {
         styles[`text${infix}-${k}`] = { color: v };
         for (const [w, n] of _.toPairs(theme.colorWeights)) {
           styles[`text${infix}-${k}-${w}`] = { color: shiftColor(v, n) };
         }
+      }
+      for (const [k, v] of _.toPairs(theme.grays)) {
+        styles[`text${infix}-gray-${k}`] = { color: v };
       }
 
       styles[`border${infix}`] = { borderWidth: theme.borderWidth };
@@ -163,6 +169,9 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
         for (const [w, n] of _.toPairs(theme.colorWeights)) {
           styles[`border${infix}-${k}-${w}`] = { borderColor: shiftColor(v, n) };
         }
+      }
+      for (const [k, v] of _.toPairs(theme.grays)) {
+        styles[`border${infix}-gray-${k}`] = { borderColor: v };
       }
 
       styles[`rounded${infix}`] = { borderRadius: theme.borderRadiusBase };
