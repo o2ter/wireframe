@@ -132,9 +132,13 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
         }
       }
 
-      for (const [k, v] of _.toPairs(theme.borderWidths)) {
-        styles[`border${infix}-${k}`] = { borderWidth: v };
-      }
+      styles[`border${infix}`] = { borderWidth: theme.borderWidth };
+      styles[`border${infix}-top`] = { borderTopWidth: theme.borderWidth };
+      styles[`border${infix}-bottom`] = { borderBottomWidth: theme.borderWidth };
+      styles[`border${infix}-start`] = { borderStartWidth: theme.borderWidth };
+      styles[`border${infix}-end`] = { borderEndWidth: theme.borderWidth };
+      styles[`border${infix}-left`] = { borderLeftWidth: theme.borderWidth };
+      styles[`border${infix}-right`] = { borderRightWidth: theme.borderWidth };
 
       styles[`border${infix}-0`] = { borderWidth: 0 };
       styles[`border${infix}-top-0`] = { borderTopWidth: 0 };
@@ -143,6 +147,16 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       styles[`border${infix}-end-0`] = { borderEndWidth: 0 };
       styles[`border${infix}-left-0`] = { borderLeftWidth: 0 };
       styles[`border${infix}-right-0`] = { borderRightWidth: 0 };
+
+      for (const [k, v] of _.toPairs(theme.borderWidths)) {
+        styles[`border${infix}-${k}`] = { borderWidth: v };
+        styles[`border${infix}-top-${k}`] = { borderTopWidth: v };
+        styles[`border${infix}-bottom-${k}`] = { borderBottomWidth: v };
+        styles[`border${infix}-start-${k}`] = { borderStartWidth: v };
+        styles[`border${infix}-end-${k}`] = { borderEndWidth: v };
+        styles[`border${infix}-left-${k}`] = { borderLeftWidth: v };
+        styles[`border${infix}-right-${k}`] = { borderRightWidth: v };
+      }
 
       for (const [k, v] of [..._.toPairs(theme.themeColors), ..._.toPairs(theme.colors)]) {
         styles[`border${infix}-${k}`] = { borderColor: v };
