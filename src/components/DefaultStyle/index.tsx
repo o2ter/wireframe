@@ -26,7 +26,7 @@
 import _ from 'lodash';
 import React from 'react';
 import { StyleProvider, shiftColor, useTheme } from '@o2ter/react-ui';
-import { useWindowDimensions, ViewStyle, TextStyle } from 'react-native';
+import { useWindowDimensions, ViewStyle, TextStyle, Platform } from 'react-native';
 
 export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   const theme = useTheme();
@@ -59,6 +59,10 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       styles[`flex${infix}-column`] = { flexDirection: 'column' };
       styles[`flex${infix}-row-reverse`] = { flexDirection: 'row-reverse' };
       styles[`flex${infix}-column-reverse`] = { flexDirection: 'column-reverse' };
+      styles[`flex${infix}-fill`] = Platform.select({ web: { flex: 1, flexBasis: 'auto' }, default: { flex: 1 } });
+      styles[`flex${infix}-wrap`] = { flexWrap: 'wrap' };
+      styles[`flex${infix}-nowrap`] = { flexWrap: 'nowrap' };
+      styles[`flex${infix}-wrap-reverse`] = { flexWrap: 'wrap-reverse' };
       styles[`justify-content${infix}-start`] = { justifyContent: 'flex-start' };
       styles[`justify-content${infix}-end`] = { justifyContent: 'flex-end' };
       styles[`justify-content${infix}-center`] = { justifyContent: 'center' };
