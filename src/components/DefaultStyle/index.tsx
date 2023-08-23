@@ -122,6 +122,10 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       styles[`align-self${infix}-baseline`] = { alignSelf: 'baseline' };
       styles[`position${infix}-relative`] = { position: 'relative' };
       styles[`position${infix}-absolute`] = { position: 'absolute' };
+      if (Platform.OS === 'web') {
+        styles[`position${infix}-fixed`] = { position: 'fixed' as any };
+        styles[`position${infix}-sticky`] = { position: 'sticky' as any };
+      }
       styles[`top${infix}-0`] = { top: 0 };
       styles[`top${infix}-50`] = { top: '50%' };
       styles[`top${infix}-100`] = { top: '100%' };
