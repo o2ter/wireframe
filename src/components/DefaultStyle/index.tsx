@@ -174,6 +174,7 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       for (const [k, v] of colors) {
         styles[`bg${infix}-${k}`] = { backgroundColor: v };
       }
+      styles[`bg${infix}-body`] = { backgroundColor: theme.bodyBackground };
 
       styles[`text${infix}-auto`] = { textAlign: 'auto' };
       styles[`text${infix}-left`] = { textAlign: 'left' };
@@ -201,6 +202,7 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       for (const [k, v] of colors) {
         styles[`text${infix}-${k}`] = { color: v };
       }
+      styles[`text${infix}-body`] = { backgroundColor: theme.bodyColor };
 
       styles[`border${infix}`] = { borderWidth: theme.borderWidth };
       styles[`border${infix}-top`] = { borderTopWidth: theme.borderWidth };
