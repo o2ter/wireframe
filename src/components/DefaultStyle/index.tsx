@@ -29,14 +29,16 @@ import { StyleProvider, shiftColor, useTheme } from '@o2ter/react-ui';
 import { useWindowDimensions, ViewStyle, TextStyle, Platform, StyleSheet } from 'react-native';
 
 export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
+
   const theme = useTheme();
   const windowDimensions = useWindowDimensions();
+
   const styles = React.useMemo(() => {
 
     const [breakpoint] = _.minBy(_.filter(_.toPairs(theme.breakpoints), ([, v]) => windowDimensions.width >= v), ([, v]) => v) ?? [];
 
     const base_colors = [
-      ..._.toPairs(theme.themeColors), 
+      ..._.toPairs(theme.themeColors),
       ..._.toPairs(theme.colors),
     ];
     const colors = [
@@ -291,6 +293,7 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
     };
 
   }, [theme, windowDimensions.width]);
+
   return (
     <StyleProvider classes={styles}>{children}</StyleProvider>
   );
