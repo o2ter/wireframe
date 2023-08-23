@@ -26,7 +26,7 @@
 import _ from 'lodash';
 import React from 'react';
 import { StyleProvider, shiftColor, useTheme } from '@o2ter/react-ui';
-import { useWindowDimensions, ViewStyle, TextStyle, Platform } from 'react-native';
+import { useWindowDimensions, ViewStyle, TextStyle, Platform, StyleSheet } from 'react-native';
 
 export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   const theme = useTheme();
@@ -284,10 +284,11 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       return styles;
     }
 
-    return breakpoint ? {
+    return {
+      'absolute-fill': StyleSheet.absoluteFillObject,
       ...createStyle(''),
-      ...createStyle(`-${breakpoint}`),
-    } : createStyle('');
+      ...breakpoint ? createStyle(`-${breakpoint}`) : {},
+    };
 
   }, [theme, windowDimensions.width]);
   return (
