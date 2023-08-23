@@ -51,6 +51,39 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       ..._.toPairs(theme.grays),
     ];
 
+    const createCompoundStyle = (infix: string) => {
+
+      const styles: Record<string, ViewStyle | TextStyle> = {};
+
+      styles[`absolute${infix}-fill`] = StyleSheet.absoluteFillObject;
+
+      if (Platform.OS === 'web') {
+        styles[`fixed${infix}-top`] = {
+          position: 'fixed' as any,
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: theme.zIndex['fixed'] ?? 1030,
+        };
+        styles[`fixed${infix}-bottom`] = {
+          position: 'fixed' as any,
+          bottom: 0,
+          left: 0,
+          right: 0,
+          zIndex: theme.zIndex['fixed'] ?? 1030,
+        };
+        styles[`sticky${infix}-top`] = {
+          position: 'sticky' as any,
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: theme.zIndex['sticky'] ?? 1020,
+        };
+      }
+
+      return styles;
+    }
+
     const createStyle = (infix: string) => {
 
       const styles: Record<string, ViewStyle | TextStyle> = {};
@@ -287,7 +320,8 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
     }
 
     return {
-      'absolute-fill': StyleSheet.absoluteFillObject,
+      ...createCompoundStyle(''),
+      ...breakpoint ? createCompoundStyle(`-${breakpoint}`) : {},
       ...createStyle(''),
       ...breakpoint ? createStyle(`-${breakpoint}`) : {},
     };
