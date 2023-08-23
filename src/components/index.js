@@ -23,6 +23,4 @@
 //  THE SOFTWARE.
 //
 
-export * from './createLayout';
 export * from './DefaultStyle';
-export * from './Layout';

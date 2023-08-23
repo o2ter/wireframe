@@ -24,4 +24,3 @@
 //
 
 export * from './index.js';
-export * from './Navigator';
