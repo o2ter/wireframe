@@ -202,7 +202,7 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       for (const [k, v] of colors) {
         styles[`text${infix}-${k}`] = { color: v };
       }
-      styles[`text${infix}-body`] = { backgroundColor: theme.bodyColor };
+      styles[`text${infix}-body`] = { color: theme.bodyColor };
 
       styles[`border${infix}`] = { borderWidth: theme.borderWidth };
       styles[`border${infix}-top`] = { borderTopWidth: theme.borderWidth };
