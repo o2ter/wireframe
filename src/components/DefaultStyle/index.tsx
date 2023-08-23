@@ -212,107 +212,85 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
         borderStyle: 'solid',
       };
       styles[`border${infix}-top`] = {
+        borderWidth: 0,
         borderTopWidth: theme.borderWidth,
-        borderColor: theme.grays['300'],
+        borderTopColor: theme.grays['300'],
         borderStyle: 'solid',
       };
       styles[`border${infix}-bottom`] = {
+        borderWidth: 0,
         borderBottomWidth: theme.borderWidth,
-        borderColor: theme.grays['300'],
+        borderBottomColor: theme.grays['300'],
         borderStyle: 'solid',
       };
       styles[`border${infix}-start`] = {
+        borderWidth: 0,
         borderStartWidth: theme.borderWidth,
-        borderColor: theme.grays['300'],
+        borderStartColor: theme.grays['300'],
         borderStyle: 'solid',
       };
       styles[`border${infix}-end`] = {
+        borderWidth: 0,
         borderEndWidth: theme.borderWidth,
-        borderColor: theme.grays['300'],
+        borderEndColor: theme.grays['300'],
         borderStyle: 'solid',
       };
       styles[`border${infix}-left`] = {
+        borderWidth: 0,
         borderLeftWidth: theme.borderWidth,
-        borderColor: theme.grays['300'],
+        borderLeftColor: theme.grays['300'],
         borderStyle: 'solid',
       };
       styles[`border${infix}-right`] = {
+        borderWidth: 0,
         borderRightWidth: theme.borderWidth,
-        borderColor: theme.grays['300'],
+        borderRightColor: theme.grays['300'],
         borderStyle: 'solid',
       };
 
-      styles[`border${infix}-0`] = {
-        borderWidth: 0,
-        borderColor: theme.grays['300'],
-        borderStyle: 'solid',
-      };
-      styles[`border${infix}-top-0`] = {
-        borderTopWidth: 0,
-        borderColor: theme.grays['300'],
-        borderStyle: 'solid',
-      };
-      styles[`border${infix}-bottom-0`] = {
-        borderBottomWidth: 0,
-        borderColor: theme.grays['300'],
-        borderStyle: 'solid',
-      };
-      styles[`border${infix}-start-0`] = {
-        borderStartWidth: 0,
-        borderColor: theme.grays['300'],
-        borderStyle: 'solid',
-      };
-      styles[`border${infix}-end-0`] = {
-        borderEndWidth: 0,
-        borderColor: theme.grays['300'],
-        borderStyle: 'solid',
-      };
-      styles[`border${infix}-left-0`] = {
-        borderLeftWidth: 0,
-        borderColor: theme.grays['300'],
-        borderStyle: 'solid',
-      };
-      styles[`border${infix}-right-0`] = {
-        borderRightWidth: 0,
-        borderColor: theme.grays['300'],
-        borderStyle: 'solid',
-      };
+      styles[`border${infix}-0`] = { borderWidth: 0 };
+      styles[`border${infix}-top-0`] = { borderTopWidth: 0 };
+      styles[`border${infix}-bottom-0`] = { borderBottomWidth: 0 };
+      styles[`border${infix}-start-0`] = { borderStartWidth: 0 };
+      styles[`border${infix}-end-0`] = { borderEndWidth: 0 };
+      styles[`border${infix}-left-0`] = { borderLeftWidth: 0 };
+      styles[`border${infix}-right-0`] = { borderRightWidth: 0 };
 
       for (const [k, v] of _.toPairs(theme.borderWidths)) {
         styles[`border${infix}-${k}`] = {
           borderWidth: v,
           borderColor: theme.grays['300'],
-        borderStyle: 'solid',
+          borderStyle: 'solid',
         };
         styles[`border${infix}-top-${k}`] = {
           borderTopWidth: v,
-          borderColor: theme.grays['300'],
-        borderStyle: 'solid',
+          borderTopColor: theme.grays['300'],
+          borderStyle: 'solid',
         };
         styles[`border${infix}-bottom-${k}`] = {
           borderBottomWidth: v,
-          borderColor: theme.grays['300'],
-        borderStyle: 'solid',
+          borderBottomColor: theme.grays['300'],
+          borderStyle: 'solid',
         };
         styles[`border${infix}-start-${k}`] = {
           borderStartWidth: v,
-          borderColor: theme.grays['300'],
-        borderStyle: 'solid',
+          borderStartColor: theme.grays['300'],
+          borderStyle: 'solid',
         };
         styles[`border${infix}-end-${k}`] = {
           borderEndWidth: v,
-          borderColor: theme.grays['300'],
-        borderStyle: 'solid',
+          borderEndColor: theme.grays['300'],
+          borderStyle: 'solid',
         };
         styles[`border${infix}-left-${k}`] = {
           borderLeftWidth: v,
-          borderColor: theme.grays['300'],
-        borderStyle: 'solid',
+          borderLeftColor: theme.grays['300'],
+          borderStyle: 'solid',
         };
         styles[`border${infix}-right-${k}`] = {
           borderRightWidth: v,
-          borderColor: theme.grays['300'],
-        borderStyle: 'solid',
+          borderRightColor: theme.grays['300'],
+          borderStyle: 'solid',
         };
       }
 
