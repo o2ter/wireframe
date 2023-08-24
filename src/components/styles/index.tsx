@@ -108,6 +108,17 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
 
       styles[`d${infix}-none`] = { display: 'none' };
       styles[`d${infix}-flex`] = { display: 'flex' };
+      if (Platform.OS === 'web') {
+        styles[`d${infix}-inline`] = { display: 'inline' as any };
+        styles[`d${infix}-inline-block`] = { display: 'inline-block' as any };
+        styles[`d${infix}-block`] = { display: 'block' as any };
+        styles[`d${infix}-grid`] = { display: 'grid' as any };
+        styles[`d${infix}-inline-grid`] = { display: 'inline-grid' as any };
+        styles[`d${infix}-table`] = { display: 'table' as any };
+        styles[`d${infix}-table-cell`] = { display: 'table-cell' as any };
+        styles[`d${infix}-table-row`] = { display: 'table-row' as any };
+        styles[`d${infix}-inline-flex`] = { display: 'inline-flex' as any };
+      }
       styles[`flex${infix}-row`] = { flexDirection: 'row' };
       styles[`flex${infix}-column`] = { flexDirection: 'column' };
       styles[`flex${infix}-row-reverse`] = { flexDirection: 'row-reverse' };
