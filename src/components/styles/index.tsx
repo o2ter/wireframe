@@ -93,7 +93,7 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       for (const [k, v] of _.toPairs(theme.fontSizes)) {
         styles[`h${k}${infix}`] = {
           marginTop: 0,
-          marginBottom: 0,
+          marginBottom: 0.5 * theme.fontSizeBase,
           fontWeight: '500',
           lineHeight: 1.2,
           fontSize: v,
