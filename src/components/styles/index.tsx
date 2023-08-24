@@ -80,6 +80,15 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
           zIndex: theme.zIndex['sticky'] ?? 1020,
         };
       }
+      for (const [k, v] of _.toPairs(theme.fontSizes)) {
+        styles[`h${k}${infix}`] = {
+          marginTop: 0,
+          marginBottom: 0,
+          fontWeight: '500',
+          lineHeight: 1.2,
+          fontSize: v,
+        };
+      }
 
       return styles;
     }

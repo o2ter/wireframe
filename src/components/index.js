@@ -23,4 +23,4 @@
 //  THE SOFTWARE.
 //
 
-export * from './DefaultStyle';
+export * from './styles';
