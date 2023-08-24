@@ -25,8 +25,18 @@
 
 import _ from 'lodash';
 import React from 'react';
-import { StyleProvider, shiftColor, useTheme } from '@o2ter/react-ui';
+import { StyleProvider, shiftColor, useAllStyle, useTheme } from '@o2ter/react-ui';
 import { useWindowDimensions, ViewStyle, TextStyle, Platform, StyleSheet } from 'react-native';
+
+export const htmlElementStyles = (
+  classes: ReturnType<typeof useAllStyle>['classes'],
+) => {
+  const styles: typeof classes = {};
+  for (const i of [1, 2, 3, 4, 5, 6]) {
+    if (classes[`h${i}`]) styles[`h${i}`] = classes[`h${i}`];
+  }
+  return styles;
+};
 
 export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
 
