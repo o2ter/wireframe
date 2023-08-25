@@ -100,9 +100,9 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       }
 
       styles[`alert${infix}`] = {
-        borderWidth: theme.borderWidth,
-        borderStyle: 'solid',
         padding: theme.spacer,
+        borderStyle: 'solid',
+        borderWidth: theme.borderWidth,
         borderRadius: theme.borderRadiusBase,
       };
       for (const [k, v] of base_colors) {
