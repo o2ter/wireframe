@@ -107,8 +107,8 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       };
       for (const [k, v] of base_colors) {
         styles[`alert${infix}-${k}`] = {
-          borderColor: shiftColor(v, theme.colorWeights['200']),
           color: shiftColor(v, theme.colorWeights['700']),
+          borderColor: shiftColor(v, theme.colorWeights['200']),
           backgroundColor: shiftColor(v, theme.colorWeights['100']),
         };
       }
