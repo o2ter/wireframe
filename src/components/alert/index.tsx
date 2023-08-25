@@ -1,5 +1,5 @@
 //
-//  index.js
+//  index.tsx
 //
 //  The MIT License
 //  Copyright (c) 2021 - 2023 O2ter Limited. All rights reserved.
@@ -23,7 +23,23 @@
 //  THE SOFTWARE.
 //
 
-export * from './styles';
-export * from './alert';
-export * from './col';
-export * from './row';
+import _ from 'lodash';
+import React from 'react';
+import { View, createComponent } from '@o2ter/react-ui';
+
+type AlertProps = React.ComponentPropsWithoutRef<typeof View> & {
+  variant: string;
+};
+
+export const Alert = createComponent(({
+  classes,
+  variant,
+  ...props
+}: AlertProps, forwardRef: React.ForwardedRef<React.ComponentRef<typeof View>>) => {
+
+  return (
+    <View ref={forwardRef} classes={['alert', `alert-${variant}`, classes]} {...props} />
+  );
+}, {
+  displayName: 'Alert',
+})
