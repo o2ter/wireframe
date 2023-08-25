@@ -25,5 +25,4 @@
 
 export * from './styles';
 export * from './alert';
-export * from './col';
-export * from './row';
+export * from './flex';

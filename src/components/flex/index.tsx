@@ -27,7 +27,7 @@ import _ from 'lodash';
 import React from 'react';
 import { View, createComponent } from '@o2ter/react-ui';
 
-type RowProps = React.ComponentPropsWithoutRef<typeof View> & {
+type FlexProps = React.ComponentPropsWithoutRef<typeof View> & {
   reversed?: boolean;
 };
 
@@ -35,11 +35,24 @@ export const Row = createComponent(({
   classes,
   reversed,
   ...props
-}: RowProps, forwardRef: React.ForwardedRef<React.ComponentRef<typeof View>>) => {
+}: FlexProps, forwardRef: React.ForwardedRef<React.ComponentRef<typeof View>>) => {
 
   return (
     <View ref={forwardRef} classes={[reversed ? 'flex-row-reverse' : 'flex-row', classes]} {...props} />
   );
 }, {
   displayName: 'Row',
-})
+});
+
+export const Col = createComponent(({
+  classes,
+  reversed,
+  ...props
+}: FlexProps, forwardRef: React.ForwardedRef<React.ComponentRef<typeof View>>) => {
+
+  return (
+    <View ref={forwardRef} classes={[reversed ? 'flex-column-reverse' : 'flex-column', classes]} {...props} />
+  );
+}, {
+  displayName: 'Col',
+});

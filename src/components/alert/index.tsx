@@ -42,4 +42,4 @@ export const Alert = createComponent(({
   );
 }, {
   displayName: 'Alert',
-})
+});
