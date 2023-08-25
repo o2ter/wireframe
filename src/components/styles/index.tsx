@@ -99,6 +99,20 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
         };
       }
 
+      styles[`alert${infix}`] = {
+        borderWidth: theme.borderWidth,
+        borderStyle: 'solid',
+        padding: theme.spacer,
+        borderRadius: theme.borderRadiusBase * 0.375,
+      };
+      for (const [k, v] of base_colors) {
+        styles[`alert${infix}-${k}`] = {
+          borderColor: shiftColor(v, theme.colorWeights['200']),
+          color: shiftColor(v, theme.colorWeights['700']),
+          backgroundColor: shiftColor(v, theme.colorWeights['100']),
+        };
+      }
+
       return styles;
     }
 
