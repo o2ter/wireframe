@@ -169,6 +169,12 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
         styles[`position${infix}-fixed`] = { position: 'fixed' as any };
         styles[`position${infix}-sticky`] = { position: 'sticky' as any };
       }
+      styles[`overflow${infix}-visible`] = { overflow: 'visible' };
+      styles[`overflow${infix}-hidden`] = { overflow: 'hidden' };
+      styles[`overflow${infix}-scroll`] = { overflow: 'scroll' };
+      if (Platform.OS === 'web') {
+        styles[`overflow${infix}-auto`] = { overflow: 'auto' as any };
+      }
       styles[`top${infix}-0`] = { top: 0 };
       styles[`top${infix}-50`] = { top: '50%' };
       styles[`top${infix}-100`] = { top: '100%' };
