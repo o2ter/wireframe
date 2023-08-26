@@ -93,9 +93,10 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       for (const [k, v] of _.toPairs(theme.fontSizes)) {
         styles[`h${k}${infix}`] = {
           marginTop: 0,
-          marginBottom: 0.5 * theme.fontSizeBase,
+          marginBottom: 0.5 * theme.root.fontSize,
           fontWeight: '500',
           fontSize: v,
+          lineHeight: 1.2,
         };
       }
 
@@ -229,7 +230,7 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       for (const [k, v] of colors) {
         styles[`bg${infix}-${k}`] = { backgroundColor: v };
       }
-      styles[`bg${infix}-body`] = { backgroundColor: theme.bodyBackground };
+      styles[`bg${infix}-body`] = { backgroundColor: theme.root.backgroundColor };
 
       styles[`text${infix}-auto`] = { textAlign: 'auto' };
       styles[`text${infix}-left`] = { textAlign: 'left' };
@@ -257,7 +258,7 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
       for (const [k, v] of colors) {
         styles[`text${infix}-${k}`] = { color: v };
       }
-      styles[`text${infix}-body`] = { color: theme.bodyColor };
+      styles[`text${infix}-body`] = { color: theme.root.textColor };
 
       styles[`border${infix}`] = {
         borderWidth: theme.borderWidth,
