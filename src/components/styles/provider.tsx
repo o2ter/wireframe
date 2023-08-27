@@ -235,6 +235,16 @@ export const _StyleProvider: React.FC<React.PropsWithChildren<{}>> = ({
       }
       styles[`bg${infix}-body`] = { backgroundColor: theme.root.backgroundColor };
 
+      if (Platform.OS === 'web') {
+        styles[`font${infix}-sans-serif`] = { fontFamily: 'var(--font-sans-serif)' };
+        styles[`font${infix}-monospace`] = { fontFamily: 'var(--font-monospace)' };
+      }
+      if (Platform.OS === 'ios') {
+        styles[`font${infix}-monospace`] = { fontFamily: 'Menlo' };
+      }
+      if (Platform.OS === 'android') {
+        styles[`font${infix}-monospace`] = { fontFamily: 'monospace' };
+      }
       styles[`text${infix}-auto`] = { textAlign: 'auto' };
       styles[`text${infix}-left`] = { textAlign: 'left' };
       styles[`text${infix}-right`] = { textAlign: 'right' };
