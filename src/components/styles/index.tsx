@@ -45,7 +45,7 @@ export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({ ch
 
   const styles = React.useMemo(() => {
 
-    const [breakpoint] = _.minBy(_.filter(_.toPairs(theme.breakpoints), ([, v]) => windowDimensions.width >= v), ([, v]) => v) ?? [];
+    const breakpoint = theme.mediaSelects(_.mapValues(theme.breakpoints, (v, k) => k));
 
     const base_colors = [
       ..._.toPairs(theme.themeColors),

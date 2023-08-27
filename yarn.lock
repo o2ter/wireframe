@@ -1144,10 +1144,10 @@
     htmlparser2 "^7.1.2"
     ramda "^0.27.2"
 
-"@o2ter/react-ui@^0.0.176":
-  version "0.0.176"
-  resolved "https://registry.yarnpkg.com/@o2ter/react-ui/-/react-ui-0.0.176.tgz#baf9516d04c890715859b2cd6359fdcf7ce8e5d9"
-  integrity sha512-fLVbrHMdD2cbeUvZAWo0h5DwVuKkmERjoCUu1otK4YF64YrZmHIUOsfIhp2VHcr/Gc0yvb8C4INsQ6rFqXQwyw==
+"@o2ter/react-ui@^0.0.186":
+  version "0.0.186"
+  resolved "https://registry.yarnpkg.com/@o2ter/react-ui/-/react-ui-0.0.186.tgz#9f8b3f903075b3707b5f8704d8a764f5a3eb9b46"
+  integrity sha512-zIS+ge1xQlkVXo1XPgsTHbAaBs7rbBdptNTJocZSASs3EaceCfLDEgAW+3yMU614yVrgIro5L2ELI9TNyL1E6g==
   dependencies:
     "@react-native-picker/picker" ">=2.4.8"
     codemirror "^6.0.1"
