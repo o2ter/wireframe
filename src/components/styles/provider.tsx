@@ -92,6 +92,7 @@ export const _StyleProvider: React.FC<React.PropsWithChildren<{}>> = ({
         };
       }
       for (const [k, v] of _.toPairs(theme.fontSizes)) {
+        if (!k.match(/^\d+$/g)) continue;
         styles[`h${k}${infix}`] = {
           marginTop: 0,
           marginBottom: 0.5 * theme.root.fontSize,
