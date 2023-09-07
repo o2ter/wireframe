@@ -145,6 +145,10 @@ export const _StyleProvider: React.FC<React.PropsWithChildren<{}>> = ({
       styles[`flex${infix}-wrap`] = { flexWrap: 'wrap' };
       styles[`flex${infix}-nowrap`] = { flexWrap: 'nowrap' };
       styles[`flex${infix}-wrap-reverse`] = { flexWrap: 'wrap-reverse' };
+      styles[`flex-grow${infix}-0`] = { flexGrow: 0 };
+      styles[`flex-grow${infix}-1`] = { flexGrow: 1 };
+      styles[`flex-shrink${infix}-0`] = { flexShrink: 0 };
+      styles[`flex-shrink${infix}-1`] = { flexShrink: 1 };
       styles[`justify-content${infix}-start`] = { justifyContent: 'flex-start' };
       styles[`justify-content${infix}-end`] = { justifyContent: 'flex-end' };
       styles[`justify-content${infix}-center`] = { justifyContent: 'center' };
@@ -201,10 +205,12 @@ export const _StyleProvider: React.FC<React.PropsWithChildren<{}>> = ({
       styles[`w${infix}-50`] = { width: '50%' };
       styles[`w${infix}-75`] = { width: '75%' };
       styles[`w${infix}-100`] = { width: '100%' };
+      styles[`mw${infix}-100`] = { maxWidth: '100%' };
       styles[`h${infix}-25`] = { height: '25%' };
       styles[`h${infix}-50`] = { height: '50%' };
       styles[`h${infix}-75`] = { height: '75%' };
       styles[`h${infix}-100`] = { height: '100%' };
+      styles[`mh${infix}-100`] = { maxHeight: '100%' };
 
       for (const [k, v] of _.toPairs(theme.spacers)) {
         styles[`p${infix}-${k}`] = { padding: v };
