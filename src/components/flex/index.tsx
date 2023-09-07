@@ -31,28 +31,16 @@ type FlexProps = React.ComponentPropsWithoutRef<typeof View> & {
   reversed?: boolean;
 };
 
-export const Row = createComponent(({
+const FlexBox = (type: 'row' | 'column') => ({
   classes,
   reversed,
   ...props
 }: FlexProps, forwardRef: React.ForwardedRef<React.ComponentRef<typeof View>>) => {
 
   return (
-    <View ref={forwardRef} classes={[reversed ? 'flex-row-reverse' : 'flex-row', classes]} {...props} />
+    <View ref={forwardRef} classes={[reversed ? `flex-${type}-reverse` : `flex-${type}`, classes]} {...props} />
   );
-}, {
-  displayName: 'Row',
-});
+};
 
-export const Col = createComponent(({
-  classes,
-  reversed,
-  ...props
-}: FlexProps, forwardRef: React.ForwardedRef<React.ComponentRef<typeof View>>) => {
-
-  return (
-    <View ref={forwardRef} classes={[reversed ? 'flex-column-reverse' : 'flex-column', classes]} {...props} />
-  );
-}, {
-  displayName: 'Col',
-});
+export const Row = createComponent(FlexBox('row'), { displayName: 'Row' });
+export const Col = createComponent(FlexBox('column'), { displayName: 'Col' });
