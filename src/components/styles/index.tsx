@@ -25,14 +25,15 @@
 
 import _ from 'lodash';
 import React from 'react';
-import { StyleProvider, useAllStyle, useTheme, useMediaSelect } from '@o2ter/react-ui';
+import { StyleProvider, useTheme, useMediaSelect } from '@o2ter/react-ui';
 import { _useAllDefaultStyle, _StyleProvider } from './provider';
+import { TextStyle, ViewStyle } from 'react-native';
 
 export { _useAllDefaultStyle };
 
 export const htmlElementStyles = (
   theme: ReturnType<typeof useTheme>,
-  classes: ReturnType<typeof useAllStyle>['classes'],
+  classes: Record<string, ViewStyle | TextStyle>,
 ) => {
   const styles: typeof classes = {};
   for (const i of [1, 2, 3, 4, 5, 6]) {
