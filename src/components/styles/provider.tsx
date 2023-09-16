@@ -25,7 +25,7 @@
 
 import _ from 'lodash';
 import React from 'react';
-import { shiftColor, useThemeVariables } from '@o2ter/react-ui';
+import { shiftColor, useTheme } from '@o2ter/react-ui';
 import { ViewStyle, TextStyle, Platform, StyleSheet } from 'react-native';
 
 type StyleType = {
@@ -43,7 +43,7 @@ export const _StyleProvider: React.FC<React.PropsWithChildren<{}>> = ({
   children
 }) => {
 
-  const theme = useThemeVariables();
+  const theme = useTheme();
 
   const styles = React.useMemo(() => {
 

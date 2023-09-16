@@ -25,7 +25,7 @@
 
 import _ from 'lodash';
 import React from 'react';
-import { StyleProvider, useAllStyle, useTheme } from '@o2ter/react-ui';
+import { StyleProvider, useAllStyle, useTheme, useMediaSelect } from '@o2ter/react-ui';
 import { _useAllDefaultStyle, _StyleProvider } from './provider';
 
 export { _useAllDefaultStyle };
@@ -79,11 +79,12 @@ const _DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({
 }) => {
   const theme = useTheme();
   const styles = _useAllDefaultStyle();
+  const { selects } = useMediaSelect();
   const selected = React.useMemo(() => {
-    const media = theme.mediaSelects(_.mapValues(theme.breakpoints, (v, k) => k));
+    const media = selects(_.mapValues(theme.breakpoints, (v, k) => k));
     const selected = _.pickBy(styles, ({ breakpoint }) => _.isNil(breakpoint) || breakpoint === media);
     return _.mapValues(selected, ({ style }) => style);
-  }, [styles, theme]);
+  }, [styles, theme, selects]);
   return (
     <StyleProvider classes={selected}>{children}</StyleProvider>
   );
