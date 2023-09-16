@@ -31,12 +31,46 @@ import { _useAllDefaultStyle, _StyleProvider } from './provider';
 export { _useAllDefaultStyle };
 
 export const htmlElementStyles = (
+  theme: ReturnType<typeof useTheme>,
   classes: ReturnType<typeof useAllStyle>['classes'],
 ) => {
   const styles: typeof classes = {};
   for (const i of [1, 2, 3, 4, 5, 6]) {
     if (classes[`h${i}`]) styles[`h${i}`] = classes[`h${i}`];
   }
+  styles['table'] = {
+    width: '100%',
+    marginBottom: theme.root.fontSize,
+    color: theme.root.textColor,
+    verticalAlign: 'top',
+    borderColor: theme.grays['300'],
+    borderCollapse: 'collapse',
+  } as any;
+  styles['th'] = {
+    textAlign: 'inherit',
+  } as any;
+  styles['tbody, td, tfoot, th, thead, tr'] = {
+    borderColor: 'inherit',
+    borderStyle: 'solid',
+    borderWidth: 0,
+  };
+  styles['table > thead > tr > *'] = {
+    borderBottomColor: 'currentColor',
+  };
+  styles['table tr > *'] = {
+    padding: theme.spacers['2'],
+    backgroundColor: 'transparent',
+    borderBottomWidth: 1,
+  };
+  styles['table > tbody'] = {
+    verticalAlign: 'inherit',
+  } as any;
+  styles['table > thead'] = {
+    verticalAlign: 'bottom',
+  };
+  styles['.table-striped tr:nth-of-type(odd) > *'] = {
+    backgroundColor: 'rgba(0, 0, 0, 0.05)',
+  };
   return styles;
 };
 
