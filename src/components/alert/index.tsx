@@ -25,13 +25,13 @@
 
 import _ from 'lodash';
 import React from 'react';
-import { View, createComponent } from '@o2ter/react-ui';
+import { View, createMemoComponent } from '@o2ter/react-ui';
 
 type AlertProps = React.ComponentPropsWithoutRef<typeof View> & {
   variant: string;
 };
 
-export const Alert = createComponent(({
+export const Alert = createMemoComponent(({
   classes,
   variant,
   ...props

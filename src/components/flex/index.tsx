@@ -25,7 +25,7 @@
 
 import _ from 'lodash';
 import React from 'react';
-import { View, createComponent } from '@o2ter/react-ui';
+import { View, createMemoComponent } from '@o2ter/react-ui';
 
 type FlexProps = React.ComponentPropsWithoutRef<typeof View> & {
   reversed?: boolean;
@@ -42,5 +42,5 @@ const FlexBox = (type: 'row' | 'column') => ({
   );
 };
 
-export const Row = createComponent(FlexBox('row'), { displayName: 'Row' });
-export const Col = createComponent(FlexBox('column'), { displayName: 'Col' });
+export const Row = createMemoComponent(FlexBox('row'), { displayName: 'Row' });
+export const Col = createMemoComponent(FlexBox('column'), { displayName: 'Col' });
