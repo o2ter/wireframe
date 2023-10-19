@@ -259,6 +259,14 @@ export const _StyleProvider: React.FC<React.PropsWithChildren<{}>> = ({
       styles[`text${infix}-lowercase`] = { textTransform: 'lowercase' };
       styles[`text${infix}-uppercase`] = { textTransform: 'uppercase' };
       styles[`text${infix}-capitalize`] = { textTransform: 'capitalize' };
+      if (Platform.OS === 'web') {
+        styles[`text${infix}-wrap`] = { whiteSpace: 'normal' } as any;
+        styles[`text${infix}-nowrap`] = { whiteSpace: 'nowrap' } as any;
+        styles[`text${infix}-break`] = {
+          wordWrap: 'break-word',
+          wordBreak: 'break-word',
+        } as any;
+      }
       styles[`fst${infix}-normal`] = { fontStyle: 'normal' };
       styles[`fst${infix}-italic`] = { fontStyle: 'italic' };
       styles[`text-decoration${infix}-none`] = { textDecorationLine: 'none' };
