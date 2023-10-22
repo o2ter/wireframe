@@ -1241,12 +1241,13 @@
     htmlparser2 "^7.1.2"
     ramda "^0.27.2"
 
-"@o2ter/react-ui@^0.0.233":
-  version "0.0.233"
-  resolved "https://registry.yarnpkg.com/@o2ter/react-ui/-/react-ui-0.0.233.tgz#92048b3700ecf69041576fae52f647a07b905b06"
-  integrity sha512-Wy0PFd+bwNQUpnAvuD0vCJwWYC/KUcUzr7G3D+nud0Dub4z1QdwZTsSCxsj1dC902tEWiCMALgL9154eaYDO4Q==
+"@o2ter/react-ui@^0.0.256":
+  version "0.0.256"
+  resolved "https://registry.yarnpkg.com/@o2ter/react-ui/-/react-ui-0.0.256.tgz#4929823d5ff97d1d9de3ca6e62896c1135a8b410"
+  integrity sha512-7F/CDp+NFp8nujaTJi+E+V8myU+C0UR4bnt0mN6UxCP+Xc8FSPYPi/HjA//KHPZkCkY57m6btYmQSYZlRnmN2Q==
   dependencies:
     "@react-native-picker/picker" ">=2.4.8"
+    "@react-native/normalize-color" "^2.1.0"
     codemirror "^6.0.1"
     d3-dsv "^3.0.1"
     jsbarcode ">=3.11.5"
@@ -1255,7 +1256,6 @@
     lottie-react-native ">=5.1.4"
     lottie-web ">=5.10.1"
     luxon ">=3.2.1"
-    normalize-css-color ">=1.0.2"
     qrcode ">=1.5.1"
     react-dom ">=18.2.0"
     react-native-fast-image ">=8.6.3"
@@ -1269,6 +1269,11 @@
   version "2.4.8"
   resolved "https://registry.yarnpkg.com/@react-native-picker/picker/-/picker-2.4.8.tgz#a1a21f3d6ecadedbc3f0b691a444ddd7baa081f8"
   integrity sha512-5NQ5XPo1B03YNqKFrV6h9L3CQaHlB80wd4ETHUEABRP2iLh7FHLVObX2GfziD+K/VJb8G4KZcZ23NFBFP1f7bg==
+
+"@react-native/normalize-color@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@react-native/normalize-color/-/normalize-color-2.1.0.tgz#939b87a9849e81687d3640c5efa2a486ac266f91"
+  integrity sha512-Z1jQI2NpdFJCVgpY+8Dq/Bt3d+YUi1928Q+/CZm/oh66fzM0RUl54vvuXlPJKybH4pdCZey1eDTPaLHkMPNgWA==
 
 "@remix-run/router@1.4.0":
   version "1.4.0"
@@ -2084,11 +2089,6 @@ node-releases@^2.0.6:
   version "2.0.8"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.8.tgz#0f349cdc8fcfa39a92ac0be9bc48b7706292b9ae"
   integrity sha512-dFSmB8fFHEH/s81Xi+Y/15DQY6VHW81nXRj86EMSL3lmuTmK1e+aT4wrFCkTbm+gSwkw4KpX+rT/pMM2c1mF+A==
-
-normalize-css-color@>=1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/normalize-css-color/-/normalize-css-color-1.0.2.tgz#02991e97cccec6623fe573afbbf0de6a1f3e9f8d"
-  integrity sha512-jPJ/V7Cp1UytdidsPqviKEElFQJs22hUUgK5BOPHTwOonNCk7/2qOxhhqzEajmFrWJowADFfOFh1V+aWkRfy+w==
 
 nth-check@^2.0.1:
   version "2.1.1"

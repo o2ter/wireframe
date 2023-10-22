@@ -25,7 +25,7 @@
 
 import _ from 'lodash';
 import React from 'react';
-import { shiftColor, useTheme } from '@o2ter/react-ui';
+import { selectPlatformShadow, elevationShadow, shiftColor, useTheme } from '@o2ter/react-ui';
 import { ViewStyle, TextStyle, Platform, StyleSheet } from 'react-native';
 
 type StyleType = {
@@ -458,6 +458,29 @@ export const _StyleProvider: React.FC<React.PropsWithChildren<{}>> = ({
           borderBottomRightRadius: v,
         };
       }
+
+      styles[`shadow${infix}-none`] = selectPlatformShadow({
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+        shadowOpacity: 0,
+        shadowRadius: 0,
+        boxShadow: 'none',
+      });
+
+      styles[`shadow${infix}-sm`] = selectPlatformShadow({
+        shadowColor: 'black',
+        ...elevationShadow(2),
+      });
+      styles[`shadow${infix}`] = selectPlatformShadow({
+        shadowColor: 'black',
+        ...elevationShadow(12),
+      });
+      styles[`shadow${infix}-lg`] = selectPlatformShadow({
+        shadowColor: 'black',
+        ...elevationShadow(24),
+      });
 
       for (const [k, v] of _.toPairs(theme.zIndex)) {
         styles[`zindex${infix}-${k}`] = { zIndex: v };
