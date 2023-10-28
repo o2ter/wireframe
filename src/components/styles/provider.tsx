@@ -58,7 +58,7 @@ export const _StyleProvider: React.FC<React.PropsWithChildren<{}>> = ({
       }),
       ...base_colors,
       ..._.flatMap(base_colors, ([k, v]) => _.map(theme.colorWeights, (s, w) => [`${k}-${w}`, shiftColor(v, s)])),
-      ..._.toPairs(theme.grays),
+      ..._.map(theme.grays, (c, w) => [`gray-${w}`, c]),
     ];
 
     const createCompoundStyle = (breakpoint?: string) => {
