@@ -39,11 +39,17 @@ DefaultStyleContext.displayName = 'DefaultStyleContext';
 
 export const _useAllDefaultStyle = () => React.useContext(DefaultStyleContext);
 
-export const _StyleProvider: React.FC<React.PropsWithChildren<{}>> = ({
+type _StyleProviderProps = React.PropsWithChildren<{
+  gridColumns?: number;
+}>;
+
+export const _StyleProvider: React.FC<_StyleProviderProps> = ({
+  gridColumns,
   children
 }) => {
 
   const theme = useTheme();
+  const _gridColumns = gridColumns ?? 12;
 
   const styles = React.useMemo(() => {
 
@@ -132,13 +138,13 @@ export const _StyleProvider: React.FC<React.PropsWithChildren<{}>> = ({
         flexBasis: 'auto',
         ...Platform.OS === 'web' ? { width: 'auto' } : {},
       };
-      for (const i of _.range(0, 12)) {
+      for (const i of _.range(0, _gridColumns)) {
         styles[`col${infix}-${i + 1}`] = {
           display: 'flex',
           flexGrow: 0,
           flexShrink: 0,
           flexBasis: 'auto',
-          width: `${100 * (i + 1) / 12}%`,
+          width: `${100 * (i + 1) / _gridColumns}%`,
         };
       }
 
@@ -534,7 +540,7 @@ export const _StyleProvider: React.FC<React.PropsWithChildren<{}>> = ({
       ..._createStyle(createStyle),
     };
 
-  }, [theme]);
+  }, [theme, _gridColumns]);
 
   return (
     <DefaultStyleContext.Provider value={styles}>{children}</DefaultStyleContext.Provider>

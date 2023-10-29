@@ -91,10 +91,15 @@ const _DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({
   );
 }
 
-export const DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({
+type DefaultStyleProviderProps = React.PropsWithChildren<{
+  gridColumns?: number;
+}>;
+
+export const DefaultStyleProvider: React.FC<DefaultStyleProviderProps> = ({
+  gridColumns,
   children
 }) => (
-  <_StyleProvider>
+  <_StyleProvider gridColumns={gridColumns}>
     <_DefaultStyleProvider>{children}</_DefaultStyleProvider>
   </_StyleProvider>
 );
