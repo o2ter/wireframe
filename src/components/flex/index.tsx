@@ -31,16 +31,16 @@ type FlexProps = React.ComponentPropsWithoutRef<typeof View> & {
   reversed?: boolean;
 };
 
-const FlexBox = (type: 'row' | 'column') => ({
+const FlexBox = (type: 'row' | 'col') => ({
   classes,
   reversed,
   ...props
 }: FlexProps, forwardRef: React.ForwardedRef<React.ComponentRef<typeof View>>) => {
 
   return (
-    <View ref={forwardRef} classes={[reversed ? `flex-${type}-reverse` : `flex-${type}`, classes]} {...props} />
+    <View ref={forwardRef} classes={[reversed ? `${type}-reverse` : `${type}`, classes]} {...props} />
   );
 };
 
 export const Row = createMemoComponent(FlexBox('row'), { displayName: 'Row' });
-export const Col = createMemoComponent(FlexBox('column'), { displayName: 'Col' });
+export const Col = createMemoComponent(FlexBox('col'), { displayName: 'Col' });

@@ -116,6 +116,32 @@ export const _StyleProvider: React.FC<React.PropsWithChildren<{}>> = ({
         };
       }
 
+      styles[`row${infix}`] = {
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+      };
+      styles[`col${infix}`] = {
+        display: 'flex',
+        flex: 1.
+      };
+      styles[`col${infix}-auto`] = {
+        display: 'flex',
+        flexGrow: 0,
+        flexShrink: 0,
+        flexBasis: 'auto',
+        ...Platform.OS === 'web' ? { width: 'auto' } : {},
+      };
+      for (const i of _.range(0, 12)) {
+        styles[`col${infix}-1`] = {
+          display: 'flex',
+          flexGrow: 0,
+          flexShrink: 0,
+          flexBasis: 'auto',
+          width: `${100 * i / 12}%`,
+        };
+      }
+
       return _.mapValues(styles, style => ({ style, breakpoint }));
     }
 
@@ -211,22 +237,6 @@ export const _StyleProvider: React.FC<React.PropsWithChildren<{}>> = ({
       styles[`h${infix}-75`] = { height: '75%' };
       styles[`h${infix}-100`] = { height: '100%' };
       styles[`mh${infix}-100`] = { maxHeight: '100%' };
-
-      styles[`col${infix}`] = { flex: 1 };
-      styles[`col${infix}-auto`] = {
-        flexGrow: 0,
-        flexShrink: 0,
-        flexBasis: 'auto',
-        ...Platform.OS === 'web' ? { width: 'auto' } : {},
-      };
-      for (const i of _.range(0, 12)) {
-        styles[`col${infix}-1`] = {
-          flexGrow: 0,
-          flexShrink: 0,
-          flexBasis: 'auto',
-          width: `${100 * i / 12}%`,
-        };
-      }
 
       for (const [k, v] of _.toPairs(theme.spacers)) {
         styles[`p${infix}-${k}`] = { padding: v };
