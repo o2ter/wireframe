@@ -238,6 +238,15 @@ export const _StyleProvider: React.FC<React.PropsWithChildren<{}>> = ({
       styles[`h${infix}-100`] = { height: '100%' };
       styles[`mh${infix}-100`] = { maxHeight: '100%' };
 
+      styles[`m${infix}-auto`] = { margin: 'auto' };
+      styles[`mx${infix}-auto`] = { marginHorizontal: 'auto' };
+      styles[`my${infix}-auto`] = { marginVertical: 'auto' };
+      styles[`mt${infix}-auto`] = { marginTop: 'auto' };
+      styles[`mb${infix}-auto`] = { marginBottom: 'auto' };
+      styles[`ms${infix}-auto`] = { marginStart: 'auto' };
+      styles[`me${infix}-auto`] = { marginEnd: 'auto' };
+      styles[`ml${infix}-auto`] = { marginLeft: 'auto' };
+      styles[`mr${infix}-auto`] = { marginRight: 'auto' };
       for (const [k, v] of _.toPairs(theme.spacers)) {
         styles[`p${infix}-${k}`] = { padding: v };
         styles[`px${infix}-${k}`] = { paddingHorizontal: v };
