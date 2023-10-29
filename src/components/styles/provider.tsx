@@ -231,9 +231,9 @@ export const _StyleProvider: React.FC<React.PropsWithChildren<{}>> = ({
         styles[`me${infix}-${k}`] = { marginEnd: v };
         styles[`ml${infix}-${k}`] = { marginLeft: v };
         styles[`mr${infix}-${k}`] = { marginRight: v };
-        styles[`g${infix}-${k}`] = { gap: v };
-        styles[`g-row${infix}-${k}`] = { rowGap: v };
-        styles[`g-col${infix}-${k}`] = { columnGap: v };
+        styles[`gap${infix}-${k}`] = { gap: v };
+        styles[`gap-row${infix}-${k}`] = { rowGap: v };
+        styles[`gap-col${infix}-${k}`] = { columnGap: v };
       }
 
       for (const [k, v] of colors) {
