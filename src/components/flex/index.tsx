@@ -38,7 +38,7 @@ const FlexBox = (type: 'row' | 'col') => ({
 }: FlexProps, forwardRef: React.ForwardedRef<React.ComponentRef<typeof View>>) => {
 
   return (
-    <View ref={forwardRef} classes={[reversed ? `${type}-reverse` : `${type}`, classes]} {...props} />
+    <View ref={forwardRef} classes={[reversed ? `${type} flex-${type}-reverse` : `${type}`, classes]} {...props} />
   );
 };
 
