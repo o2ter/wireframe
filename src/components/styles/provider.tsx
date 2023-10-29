@@ -133,12 +133,12 @@ export const _StyleProvider: React.FC<React.PropsWithChildren<{}>> = ({
         ...Platform.OS === 'web' ? { width: 'auto' } : {},
       };
       for (const i of _.range(0, 12)) {
-        styles[`col${infix}-1`] = {
+        styles[`col${infix}-${i + 1}`] = {
           display: 'flex',
           flexGrow: 0,
           flexShrink: 0,
           flexBasis: 'auto',
-          width: `${100 * i / 12}%`,
+          width: `${100 * (i + 1) / 12}%`,
         };
       }
 
