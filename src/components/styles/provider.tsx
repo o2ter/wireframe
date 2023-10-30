@@ -245,8 +245,15 @@ export const _StyleProvider: React.FC<_StyleProviderProps> = ({
       styles[`mh${infix}-100`] = { maxHeight: '100%' };
 
       styles[`m${infix}-auto`] = { margin: 'auto' };
+      for (const [k, v] of _.toPairs(theme.spacers)) {
+        styles[`m${infix}-${k}`] = { margin: v };
+      }
       styles[`mx${infix}-auto`] = { marginHorizontal: 'auto' };
       styles[`my${infix}-auto`] = { marginVertical: 'auto' };
+      for (const [k, v] of _.toPairs(theme.spacers)) {
+        styles[`mx${infix}-${k}`] = { marginHorizontal: v };
+        styles[`my${infix}-${k}`] = { marginVertical: v };
+      }
       styles[`mt${infix}-auto`] = { marginTop: 'auto' };
       styles[`mb${infix}-auto`] = { marginBottom: 'auto' };
       styles[`ms${infix}-auto`] = { marginStart: 'auto' };
@@ -254,25 +261,34 @@ export const _StyleProvider: React.FC<_StyleProviderProps> = ({
       styles[`ml${infix}-auto`] = { marginLeft: 'auto' };
       styles[`mr${infix}-auto`] = { marginRight: 'auto' };
       for (const [k, v] of _.toPairs(theme.spacers)) {
-        styles[`p${infix}-${k}`] = { padding: v };
-        styles[`px${infix}-${k}`] = { paddingHorizontal: v };
-        styles[`py${infix}-${k}`] = { paddingVertical: v };
-        styles[`pt${infix}-${k}`] = { paddingTop: v };
-        styles[`pb${infix}-${k}`] = { paddingBottom: v };
-        styles[`ps${infix}-${k}`] = { paddingStart: v };
-        styles[`pe${infix}-${k}`] = { paddingEnd: v };
-        styles[`pl${infix}-${k}`] = { paddingLeft: v };
-        styles[`pr${infix}-${k}`] = { paddingRight: v };
-        styles[`m${infix}-${k}`] = { margin: v };
-        styles[`mx${infix}-${k}`] = { marginHorizontal: v };
-        styles[`my${infix}-${k}`] = { marginVertical: v };
         styles[`mt${infix}-${k}`] = { marginTop: v };
         styles[`mb${infix}-${k}`] = { marginBottom: v };
         styles[`ms${infix}-${k}`] = { marginStart: v };
         styles[`me${infix}-${k}`] = { marginEnd: v };
         styles[`ml${infix}-${k}`] = { marginLeft: v };
         styles[`mr${infix}-${k}`] = { marginRight: v };
+      }
+
+      for (const [k, v] of _.toPairs(theme.spacers)) {
+        styles[`p${infix}-${k}`] = { padding: v };
+      }
+      for (const [k, v] of _.toPairs(theme.spacers)) {
+        styles[`px${infix}-${k}`] = { paddingHorizontal: v };
+        styles[`py${infix}-${k}`] = { paddingVertical: v };
+      }
+      for (const [k, v] of _.toPairs(theme.spacers)) {
+        styles[`pt${infix}-${k}`] = { paddingTop: v };
+        styles[`pb${infix}-${k}`] = { paddingBottom: v };
+        styles[`ps${infix}-${k}`] = { paddingStart: v };
+        styles[`pe${infix}-${k}`] = { paddingEnd: v };
+        styles[`pl${infix}-${k}`] = { paddingLeft: v };
+        styles[`pr${infix}-${k}`] = { paddingRight: v };
+      }
+
+      for (const [k, v] of _.toPairs(theme.spacers)) {
         styles[`gap${infix}-${k}`] = { gap: v };
+      }
+      for (const [k, v] of _.toPairs(theme.spacers)) {
         styles[`gap-row${infix}-${k}`] = { rowGap: v };
         styles[`gap-col${infix}-${k}`] = { columnGap: v };
       }
