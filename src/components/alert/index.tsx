@@ -28,17 +28,17 @@ import React from 'react';
 import { View, createMemoComponent } from '@o2ter/react-ui';
 
 type AlertProps = React.ComponentPropsWithoutRef<typeof View> & {
-  variant: string;
+  color: string;
 };
 
 export const Alert = createMemoComponent(({
   classes,
-  variant,
+  color,
   ...props
 }: AlertProps, forwardRef: React.ForwardedRef<React.ComponentRef<typeof View>>) => {
 
   return (
-    <View ref={forwardRef} classes={['alert', `alert-${variant}`, classes]} {...props} />
+    <View ref={forwardRef} classes={['alert', `alert-${color}`, classes]} {...props} />
   );
 }, {
   displayName: 'Alert',
