@@ -25,9 +25,9 @@
 
 import _ from 'lodash';
 import React from 'react';
-import { StyleProvider, useTheme, useMediaSelect } from '@o2ter/react-ui';
+import { StyleProvider, useTheme } from '@o2ter/react-ui';
 import { _useAllDefaultStyle, _StyleProvider } from './provider';
-import { TextStyle, ViewStyle } from 'react-native';
+import { TextStyle, ViewStyle, useWindowDimensions } from 'react-native';
 
 export { _useAllDefaultStyle };
 
@@ -80,12 +80,12 @@ const _DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({
 }) => {
   const theme = useTheme();
   const styles = _useAllDefaultStyle();
-  const { selects } = useMediaSelect();
+  const windowDimensions = useWindowDimensions();
   const selected = React.useMemo(() => {
-    const media = selects(_.mapValues(theme.breakpoints, (v, k) => k));
-    const selected = _.pickBy(styles, ({ breakpoint }) => _.isNil(breakpoint) || breakpoint === media);
+    const media = _.keys(_.pickBy(theme.breakpoints, v => windowDimensions.width >= v));
+    const selected = _.pickBy(styles, ({ breakpoint }) => _.isNil(breakpoint) || _.includes(media, breakpoint));
     return _.mapValues(selected, ({ style }) => style);
-  }, [styles, theme, selects]);
+  }, [styles, theme, windowDimensions.width]);
   return (
     <StyleProvider classes={selected}>{children}</StyleProvider>
   );
