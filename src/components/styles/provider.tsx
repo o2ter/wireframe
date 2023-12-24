@@ -26,12 +26,14 @@
 import _ from 'lodash';
 import React from 'react';
 import { selectPlatformShadow, elevationShadow, shiftColor, useTheme } from '@o2ter/react-ui';
-import { ViewStyle, TextStyle, Platform, StyleSheet } from 'react-native';
+import { ViewStyle, TextStyle, Platform, StyleSheet, useWindowDimensions } from 'react-native';
 
 type StyleType = {
   style: ViewStyle | TextStyle;
   breakpoint?: string;
 };
+
+const dynamicViewportSupport = typeof CSS !== 'undefined' && 'supports' in CSS && CSS.supports('height', '100dvh');
 
 export const DefaultStyleContext = React.createContext<Record<string, StyleType>>({});
 
@@ -50,6 +52,8 @@ export const _StyleProvider: React.FC<_StyleProviderProps> = ({
 
   const theme = useTheme();
   const _gridColumns = gridColumns ?? 12;
+
+  const screen = Platform.OS === 'web' ? undefined : useWindowDimensions();
 
   const styles = React.useMemo(() => {
 
@@ -215,6 +219,7 @@ export const _StyleProvider: React.FC<_StyleProviderProps> = ({
       if (Platform.OS === 'web') {
         styles[`overflow${infix}-auto`] = { overflow: 'auto' as any };
       }
+
       styles[`top${infix}-0`] = { top: 0 };
       styles[`top${infix}-50`] = { top: '50%' };
       styles[`top${infix}-100`] = { top: '100%' };
@@ -233,16 +238,46 @@ export const _StyleProvider: React.FC<_StyleProviderProps> = ({
       styles[`right${infix}-0`] = { right: 0 };
       styles[`right${infix}-50`] = { right: '50%' };
       styles[`right${infix}-100`] = { right: '100%' };
+
       styles[`w${infix}-25`] = { width: '25%' };
       styles[`w${infix}-50`] = { width: '50%' };
       styles[`w${infix}-75`] = { width: '75%' };
       styles[`w${infix}-100`] = { width: '100%' };
-      styles[`mw${infix}-100`] = { maxWidth: '100%' };
       styles[`h${infix}-25`] = { height: '25%' };
       styles[`h${infix}-50`] = { height: '50%' };
       styles[`h${infix}-75`] = { height: '75%' };
       styles[`h${infix}-100`] = { height: '100%' };
-      styles[`mh${infix}-100`] = { maxHeight: '100%' };
+
+      styles[`vw${infix}-25`] = { width: screen ? 0.25 * screen.width : '25vw' };
+      styles[`vw${infix}-50`] = { width: screen ? 0.5 * screen.width : '50vw' };
+      styles[`vw${infix}-75`] = { width: screen ? 0.75 * screen.width : '75vw' };
+      styles[`vw${infix}-100`] = { width: screen ? screen.width : '100vw' };
+      styles[`vh${infix}-25`] = { height: screen ? 0.25 * screen.height : '25vh' };
+      styles[`vh${infix}-50`] = { height: screen ? 0.5 * screen.height : '50vh' };
+      styles[`vh${infix}-75`] = { height: screen ? 0.75 * screen.height : '75vh' };
+      styles[`vh${infix}-100`] = { height: screen ? screen.height : '100vh' };
+      styles[`dvw${infix}-25`] = { width: screen ? 0.25 * screen.width : dynamicViewportSupport ? '25dvw' : '25vw' };
+      styles[`dvw${infix}-50`] = { width: screen ? 0.5 * screen.width : dynamicViewportSupport ? '50dvw' : '50vw' };
+      styles[`dvw${infix}-75`] = { width: screen ? 0.75 * screen.width : dynamicViewportSupport ? '75dvw' : '75vw' };
+      styles[`dvw${infix}-100`] = { width: screen ? screen.width : dynamicViewportSupport ? '100dvw' : '100vw' };
+      styles[`dvh${infix}-25`] = { height: screen ? 0.25 * screen.height : dynamicViewportSupport ? '25dvh' : '25vh' };
+      styles[`dvh${infix}-50`] = { height: screen ? 0.5 * screen.height : dynamicViewportSupport ? '50dvh' : '50vh' };
+      styles[`dvh${infix}-75`] = { height: screen ? 0.75 * screen.height : dynamicViewportSupport ? '75dvh' : '75vh' };
+      styles[`dvh${infix}-100`] = { height: screen ? screen.height : dynamicViewportSupport ? '100dvh' : '100vh' };
+
+      styles[`min-w${infix}-100`] = { minWidth: '100%' };
+      styles[`min-h${infix}-100`] = { minHeight: '100%' };
+      styles[`min-vw${infix}-100`] = { minWidth: screen ? screen.width : '100vw' };
+      styles[`min-vh${infix}-100`] = { minHeight: screen ? screen.height : '100vh' };
+      styles[`min-dvw${infix}-100`] = { minWidth: screen ? screen.width : dynamicViewportSupport ? '100dvw' : '100vw' };
+      styles[`min-dvh${infix}-100`] = { minHeight: screen ? screen.height : dynamicViewportSupport ? '100dvh' : '100vh' };
+
+      styles[`max-w${infix}-100`] = { maxWidth: '100%' };
+      styles[`max-h${infix}-100`] = { maxHeight: '100%' };
+      styles[`max-vw${infix}-100`] = { maxWidth: screen ? screen.width : '100vw' };
+      styles[`max-vh${infix}-100`] = { maxHeight: screen ? screen.height : '100vh' };
+      styles[`max-dvw${infix}-100`] = { maxWidth: screen ? screen.width : dynamicViewportSupport ? '100dvw' : '100vw' };
+      styles[`max-dvh${infix}-100`] = { maxHeight: screen ? screen.height : dynamicViewportSupport ? '100dvh' : '100vh' };
 
       styles[`m${infix}-auto`] = { margin: 'auto' };
       for (const [k, v] of _.toPairs(theme.spacers)) {
@@ -556,7 +591,7 @@ export const _StyleProvider: React.FC<_StyleProviderProps> = ({
       ..._createStyle(createStyle),
     };
 
-  }, [theme, _gridColumns]);
+  }, [theme, _gridColumns, screen]);
 
   return (
     <DefaultStyleContext.Provider value={styles}>{children}</DefaultStyleContext.Provider>
