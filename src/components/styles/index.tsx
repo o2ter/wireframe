@@ -25,7 +25,7 @@
 
 import _ from 'lodash';
 import React from 'react';
-import { StyleProvider, useTheme } from '@o2ter/react-ui';
+import { StyleProvider, isSSR, useTheme } from '@o2ter/react-ui';
 import { _useAllDefaultStyle, _StyleProvider } from './provider';
 import { TextStyle, ViewStyle, useWindowDimensions } from 'react-native';
 
@@ -82,7 +82,7 @@ const _DefaultStyleProvider: React.FC<React.PropsWithChildren<{}>> = ({
   const styles = _useAllDefaultStyle();
   const windowDimensions = useWindowDimensions();
   const selected = React.useMemo(() => {
-    const media = _.keys(_.pickBy(theme.breakpoints, v => windowDimensions.width >= v));
+    const media = _.keys(_.pickBy(theme.breakpoints, v => isSSR || windowDimensions.width >= v));
     const selected = _.pickBy(styles, ({ breakpoint }) => _.isNil(breakpoint) || _.includes(media, breakpoint));
     return _.mapValues(selected, ({ style }) => style);
   }, [styles, theme, windowDimensions.width]);
