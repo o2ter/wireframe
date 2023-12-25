@@ -221,63 +221,38 @@ export const _StyleProvider: React.FC<_StyleProviderProps> = ({
       }
 
       styles[`top${infix}-0`] = { top: 0 };
-      styles[`top${infix}-50`] = { top: '50%' };
-      styles[`top${infix}-100`] = { top: '100%' };
       styles[`bottom${infix}-0`] = { bottom: 0 };
-      styles[`bottom${infix}-50`] = { bottom: '50%' };
-      styles[`bottom${infix}-100`] = { bottom: '100%' };
       styles[`start${infix}-0`] = { start: 0 };
-      styles[`start${infix}-50`] = { start: '50%' };
-      styles[`start${infix}-100`] = { start: '100%' };
       styles[`end${infix}-0`] = { end: 0 };
-      styles[`end${infix}-50`] = { end: '50%' };
-      styles[`end${infix}-100`] = { end: '100%' };
       styles[`left${infix}-0`] = { left: 0 };
-      styles[`left${infix}-50`] = { left: '50%' };
-      styles[`left${infix}-100`] = { left: '100%' };
       styles[`right${infix}-0`] = { right: 0 };
-      styles[`right${infix}-50`] = { right: '50%' };
-      styles[`right${infix}-100`] = { right: '100%' };
 
-      styles[`w${infix}-25`] = { width: '25%' };
-      styles[`w${infix}-50`] = { width: '50%' };
-      styles[`w${infix}-75`] = { width: '75%' };
-      styles[`w${infix}-100`] = { width: '100%' };
-      styles[`h${infix}-25`] = { height: '25%' };
-      styles[`h${infix}-50`] = { height: '50%' };
-      styles[`h${infix}-75`] = { height: '75%' };
-      styles[`h${infix}-100`] = { height: '100%' };
-
-      styles[`vw${infix}-25`] = { width: screen ? 0.25 * screen.width : '25vw' };
-      styles[`vw${infix}-50`] = { width: screen ? 0.5 * screen.width : '50vw' };
-      styles[`vw${infix}-75`] = { width: screen ? 0.75 * screen.width : '75vw' };
-      styles[`vw${infix}-100`] = { width: screen ? screen.width : '100vw' };
-      styles[`vh${infix}-25`] = { height: screen ? 0.25 * screen.height : '25vh' };
-      styles[`vh${infix}-50`] = { height: screen ? 0.5 * screen.height : '50vh' };
-      styles[`vh${infix}-75`] = { height: screen ? 0.75 * screen.height : '75vh' };
-      styles[`vh${infix}-100`] = { height: screen ? screen.height : '100vh' };
-      styles[`dvw${infix}-25`] = { width: screen ? 0.25 * screen.width : dynamicViewportSupport ? '25dvw' : '25vw' };
-      styles[`dvw${infix}-50`] = { width: screen ? 0.5 * screen.width : dynamicViewportSupport ? '50dvw' : '50vw' };
-      styles[`dvw${infix}-75`] = { width: screen ? 0.75 * screen.width : dynamicViewportSupport ? '75dvw' : '75vw' };
-      styles[`dvw${infix}-100`] = { width: screen ? screen.width : dynamicViewportSupport ? '100dvw' : '100vw' };
-      styles[`dvh${infix}-25`] = { height: screen ? 0.25 * screen.height : dynamicViewportSupport ? '25dvh' : '25vh' };
-      styles[`dvh${infix}-50`] = { height: screen ? 0.5 * screen.height : dynamicViewportSupport ? '50dvh' : '50vh' };
-      styles[`dvh${infix}-75`] = { height: screen ? 0.75 * screen.height : dynamicViewportSupport ? '75dvh' : '75vh' };
-      styles[`dvh${infix}-100`] = { height: screen ? screen.height : dynamicViewportSupport ? '100dvh' : '100vh' };
-
-      styles[`min-w${infix}-100`] = { minWidth: '100%' };
-      styles[`min-h${infix}-100`] = { minHeight: '100%' };
-      styles[`min-vw${infix}-100`] = { minWidth: screen ? screen.width : '100vw' };
-      styles[`min-vh${infix}-100`] = { minHeight: screen ? screen.height : '100vh' };
-      styles[`min-dvw${infix}-100`] = { minWidth: screen ? screen.width : dynamicViewportSupport ? '100dvw' : '100vw' };
-      styles[`min-dvh${infix}-100`] = { minHeight: screen ? screen.height : dynamicViewportSupport ? '100dvh' : '100vh' };
-
-      styles[`max-w${infix}-100`] = { maxWidth: '100%' };
-      styles[`max-h${infix}-100`] = { maxHeight: '100%' };
-      styles[`max-vw${infix}-100`] = { maxWidth: screen ? screen.width : '100vw' };
-      styles[`max-vh${infix}-100`] = { maxHeight: screen ? screen.height : '100vh' };
-      styles[`max-dvw${infix}-100`] = { maxWidth: screen ? screen.width : dynamicViewportSupport ? '100dvw' : '100vw' };
-      styles[`max-dvh${infix}-100`] = { maxHeight: screen ? screen.height : dynamicViewportSupport ? '100dvh' : '100vh' };
+      for (const x of [25, 50, 75, 100]) {
+        styles[`top${infix}-${x}`] = { top: `${x}%` };
+        styles[`bottom${infix}-${x}`] = { bottom: `${x}%` };
+        styles[`start${infix}-${x}`] = { start: `${x}%` };
+        styles[`end${infix}-${x}`] = { end: `${x}%` };
+        styles[`left${infix}-${x}`] = { left: `${x}%` };
+        styles[`right${infix}-${x}`] = { right: `${x}%` };
+        styles[`w${infix}-${x}`] = { width: `${x}%` };
+        styles[`h${infix}-${x}`] = { height: `${x}%` };
+        styles[`vw${infix}-${x}`] = { width: screen ? screen.width * x / 100 : `${x}vw` };
+        styles[`vh${infix}-${x}`] = { height: screen ? screen.height * x / 100 : `${x}vh` };
+        styles[`dvw${infix}-${x}`] = { width: screen ? screen.width * x / 100 : dynamicViewportSupport ? `${x}dvw` : `${x}vw` };
+        styles[`dvh${infix}-${x}`] = { height: screen ? screen.height * x / 100 : dynamicViewportSupport ? `${x}dvh` : `${x}vh` };
+        styles[`min-w${infix}-${x}`] = { minWidth: `${x}%` };
+        styles[`min-h${infix}-${x}`] = { minHeight: `${x}%` };
+        styles[`min-vw${infix}-${x}`] = { minWidth: screen ? screen.width * x / 100 : `${x}vw` };
+        styles[`min-vh${infix}-${x}`] = { minHeight: screen ? screen.height * x / 100 : `${x}vh` };
+        styles[`min-dvw${infix}-${x}`] = { minWidth: screen ? screen.width * x / 100 : dynamicViewportSupport ? `${x}dvw` : `${x}vw` };
+        styles[`min-dvh${infix}-${x}`] = { minHeight: screen ? screen.height * x / 100 : dynamicViewportSupport ? `${x}dvh` : `${x}vh` };
+        styles[`max-w${infix}-${x}`] = { maxWidth: `${x}%` };
+        styles[`max-h${infix}-${x}`] = { maxHeight: `${x}%` };
+        styles[`max-vw${infix}-${x}`] = { maxWidth: screen ? screen.width * x / 100 : `${x}vw` };
+        styles[`max-vh${infix}-${x}`] = { maxHeight: screen ? screen.height * x / 100 : `${x}vh` };
+        styles[`max-dvw${infix}-${x}`] = { maxWidth: screen ? screen.width * x / 100 : dynamicViewportSupport ? `${x}dvw` : `${x}vw` };
+        styles[`max-dvh${infix}-${x}`] = { maxHeight: screen ? screen.height * x / 100 : dynamicViewportSupport ? `${x}dvh` : `${x}vh` };
+      }
 
       styles[`m${infix}-auto`] = { margin: 'auto' };
       for (const [k, v] of _.toPairs(theme.spacers)) {
