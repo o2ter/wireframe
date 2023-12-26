@@ -1241,10 +1241,10 @@
     htmlparser2 "^7.1.2"
     ramda "^0.27.2"
 
-"@o2ter/react-ui@^0.0.291":
-  version "0.0.291"
-  resolved "https://registry.yarnpkg.com/@o2ter/react-ui/-/react-ui-0.0.291.tgz#be6c75be507fbc33a93dcbe77b58be803e4c3f40"
-  integrity sha512-lR6RR0OCpneEylHxKZDR4rNMIBUXp6Y0KHF3YEseLLlIfC6D4ZyYZNOcvjf6nDLbKnyqO1H9OOABvK+1gs9HYA==
+"@o2ter/react-ui@^0.0.292":
+  version "0.0.292"
+  resolved "https://registry.yarnpkg.com/@o2ter/react-ui/-/react-ui-0.0.292.tgz#1c964a4f194141a868550621a7abc51261512fff"
+  integrity sha512-QpsxQdvYPrS4T8V8nWK6ArjW/NCDPzyp8aL9MI5XS6wGKuQcwmAfBasbVFoYrO1Kr5sahP3tf8wkcX3kEQDW+Q==
   dependencies:
     "@react-native-picker/picker" ">=2.4.8"
     "@react-native/normalize-colors" "^0.74.1"
