@@ -57,19 +57,11 @@ export const _StyleProvider: React.FC<_StyleProviderProps> = ({
 
   const styles = React.useMemo(() => {
 
-    const base_colors = [
+    const baseColors = [
       ..._.toPairs(theme.themeColors),
       ..._.toPairs(theme.colors),
     ];
-    const colors = [
-      ..._.toPairs({
-        black: '#000000',
-        white: '#ffffff',
-      }),
-      ...base_colors,
-      ..._.flatMap(base_colors, ([k, v]) => _.map(theme.colorWeights, (s, w) => [`${k}-${w}`, shiftColor(v, s)])),
-      ..._.map(theme.grays, (c, w) => [`gray-${w}`, c]),
-    ];
+    const colors = _.toPairs(theme._colors);
 
     const createCompoundStyle = (breakpoint?: string) => {
 
@@ -118,7 +110,7 @@ export const _StyleProvider: React.FC<_StyleProviderProps> = ({
         borderWidth: theme.borderWidth,
         borderRadius: theme.borderRadiusBase,
       };
-      for (const [k, v] of base_colors) {
+      for (const [k, v] of baseColors) {
         styles[`alert${infix}-${k}`] = {
           color: shiftColor(v, theme.colorWeights['700']),
           borderColor: shiftColor(v, theme.colorWeights['200']),
