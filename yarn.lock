@@ -1209,10 +1209,10 @@
   dependencies:
     "@lezer/common" "^1.0.0"
 
-"@o2ter/react-ui@^0.0.306":
-  version "0.0.306"
-  resolved "https://registry.yarnpkg.com/@o2ter/react-ui/-/react-ui-0.0.306.tgz#beedeb79b4007ac32d8635f6d4c29c7601de3831"
-  integrity sha512-wrL8K9hz4h8j9PFzsF16EG08tZNX3Yw0X2z80QCTIyuG9ERwycdtlZ0xrZBCTMkB+B3iP5jOXQ5uLC++NAMj1A==
+"@o2ter/react-ui@^0.0.307":
+  version "0.0.307"
+  resolved "https://registry.yarnpkg.com/@o2ter/react-ui/-/react-ui-0.0.307.tgz#7426e9b1f4a4953e5e1c6dfb93989b05eab26fe9"
+  integrity sha512-byqe7Xm9dxmH/wBUPdaijiin7zRC4NPqIE+gXxFz7psqt3xXgoau5XZck/5NGg66wdEPh0ecfeScpvhFf0geqg==
   dependencies:
     "@react-native-picker/picker" ">=2.4.8"
     "@react-native/normalize-colors" "^0.74.1"
@@ -2277,10 +2277,10 @@ style-mod@^4.0.0:
   resolved "https://registry.yarnpkg.com/style-mod/-/style-mod-4.0.2.tgz#ef9e14c4c67428bcf31cc886787e81ca7f8f5021"
   integrity sha512-C4myMmRTO8iaC5Gg+N1ftK2WT4eXUTMAa+HEFPPrfVeO/NtqLTtAmV1HbqnuGtLwCek44Ra76fdGUkSqjiMPcQ==
 
-sugax@^1.0.90:
-  version "1.0.90"
-  resolved "https://registry.yarnpkg.com/sugax/-/sugax-1.0.90.tgz#77e16d84c4e1cd57ba7858c43255c152edde072d"
-  integrity sha512-ru+7mmWcl7dhIVwMSwOwUly33fM+jcld4hxRNlC/piwwkbytnfbN693mtBuA89MwI73HgbTPqlEpbI9aph7tmg==
+sugax@^1.0.92:
+  version "1.0.92"
+  resolved "https://registry.yarnpkg.com/sugax/-/sugax-1.0.92.tgz#710a466b739ff2788e10ac2824a71cc09276682e"
+  integrity sha512-ayJxMnA9mS33C1FV1OZnwoySXaDxCEjtmYKxunf7qHioEobG+Ye43a4jp/TmYHLV+SKfPOTz3bmK3IURzPOHnA==
 
 supports-color@^5.3.0:
   version "5.5.0"
