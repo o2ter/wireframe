@@ -42,5 +42,5 @@ const FlexBox = (type: 'row' | 'column') => ({
   );
 };
 
-export const Row = /*#__PURE__*/ createMemoComponent(FlexBox('row'), { displayName: 'Row' });
-export const Col = /*#__PURE__*/ createMemoComponent(FlexBox('column'), { displayName: 'Col' });
+export const Row = createMemoComponent(FlexBox('row'), { displayName: 'Row' });
+export const Col = createMemoComponent(FlexBox('column'), { displayName: 'Col' });

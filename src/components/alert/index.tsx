@@ -31,7 +31,7 @@ type AlertProps = React.ComponentPropsWithoutRef<typeof View> & {
   color: string;
 };
 
-export const Alert = /*#__PURE__*/ createMemoComponent(({
+export const Alert = createMemoComponent(({
   classes,
   color,
   ...props
