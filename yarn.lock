@@ -1209,10 +1209,10 @@
   dependencies:
     "@lezer/common" "^1.0.0"
 
-"@o2ter/react-ui@^0.0.325":
-  version "0.0.325"
-  resolved "https://registry.yarnpkg.com/@o2ter/react-ui/-/react-ui-0.0.325.tgz#58beb8dc6a94ac603ea95695577addc56ce06f6e"
-  integrity sha512-vILDknB2AHJLBEr2G+Rm2g57XuC+L2YCfTZQ2dAUf4i920/wv/9F2PIQZGZQFxAVLVzq8MGUL2ZbVDsaAntYfw==
+"@o2ter/react-ui@^0.0.326":
+  version "0.0.326"
+  resolved "https://registry.yarnpkg.com/@o2ter/react-ui/-/react-ui-0.0.326.tgz#4363ca266afde703c2e71a74095d714c06d00454"
+  integrity sha512-fzXaeY+8Sp6zIn4NxV/z7Q9w/6BaB8Jzo4KWGPAPwsi3UIWISbEaqgfK9BqiAy/OjB8n6nPtAXiT2OA/zIcADw==
   dependencies:
     "@react-native-picker/picker" ">=2.4.8"
     "@react-native/normalize-colors" "^0.74.1"
