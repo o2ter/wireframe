@@ -1,5 +1,5 @@
 //
-//  index.js
+//  index.tsx
 //
 //  The MIT License
 //  Copyright (c) 2021 - 2024 O2ter Limited. All rights reserved.
@@ -23,7 +23,40 @@
 //  THE SOFTWARE.
 //
 
-export * from './styles';
-export * from './alert';
-export * from './flex';
-export * from './layout';
+import _ from 'lodash';
+import React from 'react';
+import { LayoutChangeEvent, LayoutRectangle } from 'react-native';
+
+const LayoutContext = React.createContext<{
+  layout: Record<string, LayoutRectangle | undefined>;
+  setLayout: React.Dispatch<React.SetStateAction<Record<string, LayoutRectangle | undefined>>>;
+}>({
+  layout: {},
+  setLayout: () => { },
+});
+
+export const LayoutProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
+  const [layout, setLayout] = React.useState<Record<string, LayoutRectangle | undefined>>({});
+  const value = React.useMemo(() => ({ layout, setLayout }), [layout]);
+  return (
+    <LayoutContext.Provider value={value}>
+      {children}
+    </LayoutContext.Provider>
+  );
+}
+
+export const useLayout = (name: string) => {
+  const { layout, setLayout } = React.useContext(LayoutContext);
+  const handlers = React.useMemo(() => ({
+    onLayout: (event: LayoutChangeEvent) => {
+      setLayout(v => ({ ...v, [name]: event.nativeEvent.layout }));
+    },
+  }), []);
+  React.useEffect(() => {
+    return () => setLayout(v => ({ ...v, [name]: undefined }));
+  }, []);
+  return {
+    layout: layout[name],
+    handlers,
+  };
+}
