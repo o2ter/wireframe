@@ -9,17 +9,14 @@
     "maxNodeModuleJsDepth": 1,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "jsx": "react",
-    "declaration": true,
-    "declarationDir": "types",
+    "jsx": "react-jsx",
+    "declaration": false,
     "outDir": "dist",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "emitDeclarationOnly": true,
     "downlevelIteration": true,
-    "moduleSuffixes": [".web", ""]
   },
-  "exclude":[
+  "exclude": [
     "**/dist/*",
     "**/node_modules/*"
   ]
