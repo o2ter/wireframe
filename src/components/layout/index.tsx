@@ -47,13 +47,17 @@ export const LayoutProvider: React.FC<React.PropsWithChildren<{}>> = ({ children
 
 export const useLayout = (name: string) => {
   const { layout, setLayout } = React.useContext(LayoutContext);
+  const register = React.useRef(false);
   const handlers = React.useMemo(() => ({
     onLayout: (event: LayoutChangeEvent) => {
+      register.current = true;
       setLayout(v => ({ ...v, [name]: event.nativeEvent.layout }));
     },
   }), []);
   React.useEffect(() => {
-    return () => setLayout(v => ({ ...v, [name]: undefined }));
+    return () => {
+      if (register.current) setLayout(v => ({ ...v, [name]: undefined }));
+    };
   }, []);
   return {
     layout: layout[name],
