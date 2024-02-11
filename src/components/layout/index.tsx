@@ -28,15 +28,15 @@ import React from 'react';
 import { LayoutChangeEvent, LayoutRectangle } from 'react-native';
 
 const LayoutContext = React.createContext<{
-  layout: Record<string, LayoutRectangle | undefined>;
-  setLayout: React.Dispatch<React.SetStateAction<Record<string, LayoutRectangle | undefined>>>;
+  layout: Record<string, Record<string, LayoutRectangle>>;
+  setLayout: React.Dispatch<React.SetStateAction<Record<string, Record<string, LayoutRectangle>>>>;
 }>({
   layout: {},
   setLayout: () => { },
 });
 
 export const LayoutProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
-  const [layout, setLayout] = React.useState<Record<string, LayoutRectangle | undefined>>({});
+  const [layout, setLayout] = React.useState<Record<string, Record<string, LayoutRectangle>>>({});
   const value = React.useMemo(() => ({ layout, setLayout }), [layout]);
   return (
     <LayoutContext.Provider value={value}>
@@ -46,21 +46,24 @@ export const LayoutProvider: React.FC<React.PropsWithChildren<{}>> = ({ children
 }
 
 export const useLayout = (name: string) => {
+  const id = React.useId();
   const { layout, setLayout } = React.useContext(LayoutContext);
-  const register = React.useRef(false);
   const handlers = React.useMemo(() => ({
     onLayout: (event: LayoutChangeEvent) => {
-      register.current = true;
-      setLayout(v => ({ ...v, [name]: event.nativeEvent.layout }));
+      setLayout(v => ({
+        ...v,
+        [name]: {
+          ...v[name] ?? {},
+          [id]: event.nativeEvent.layout,
+        },
+      }));
     },
   }), []);
   React.useEffect(() => {
-    return () => {
-      if (register.current) setLayout(v => ({ ...v, [name]: undefined }));
-    };
+    return () => setLayout(v => ({ ...v, [name]: _.omit(v[name], id) }));
   }, []);
   return {
-    layout: layout[name],
+    layout: _.first(_.values(layout[name])),
     handlers,
   };
 }
