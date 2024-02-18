@@ -1209,10 +1209,10 @@
   dependencies:
     "@lezer/common" "^1.0.0"
 
-"@o2ter/react-ui@^0.0.331":
-  version "0.0.331"
-  resolved "https://registry.yarnpkg.com/@o2ter/react-ui/-/react-ui-0.0.331.tgz#91db2191abe7f79f275524ada1650f54aff539a1"
-  integrity sha512-mvjrA4edRj5FTMhSZAAjNv5+6w0LXqNF9/jyF/JtgAYKg6L2t3p6KwRZHn0BSri6dJFAkvc0M4Bh7djKNLMYXw==
+"@o2ter/react-ui@^0.0.332":
+  version "0.0.332"
+  resolved "https://registry.yarnpkg.com/@o2ter/react-ui/-/react-ui-0.0.332.tgz#a9c493e0ec8a3a6f6caeac57f1ca8ff2f548eb93"
+  integrity sha512-xRABO9BpPULiisCcMeyKNMlNSU4/qsAsW6N1pd7VPivie2BOTQgPPS7zR3CVk1kB+P8ZSr20vdJ9l58tADi+bQ==
   dependencies:
     "@react-native-picker/picker" ">=2.4.8"
     "@react-native/normalize-colors" "^0.74.1"
@@ -1227,8 +1227,7 @@
     luxon ">=3.2.1"
     qrcode ">=1.5.1"
     quill "^1.3.7"
-    quill-image-drop-module "^1.0.3"
-    quill-image-resize-module "^3.0.0"
+    quill-delta "^5.1.0"
     react-dom ">=18.2.0"
     react-native-fast-image ">=8.6.3"
     react-native-safe-area-context ">=4.4.1"
@@ -2089,7 +2088,7 @@ lodash.isequal@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
   integrity sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==
 
-lodash@>=4.17.21, lodash@^4.17.4:
+lodash@>=4.17.21:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -2304,23 +2303,7 @@ quill-delta@^5.1.0:
     lodash.clonedeep "^4.5.0"
     lodash.isequal "^4.5.0"
 
-quill-image-drop-module@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/quill-image-drop-module/-/quill-image-drop-module-1.0.3.tgz#0e5ec8329dd67a12126f166b191bf64d2057a7d3"
-  integrity sha512-HP0Y2kb3nQk1QbRKZzEe1j3mArRQerN5B/U/MlXrOnxmhy3m/xYmVv0YoE13vWnGnBOIcoXGJ/9fi7l6AwsP8Q==
-  dependencies:
-    quill "^1.2.2"
-
-quill-image-resize-module@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/quill-image-resize-module/-/quill-image-resize-module-3.0.0.tgz#0fd93746a837336d95b2f536140416a623c71771"
-  integrity sha512-1TZBnUxU/WIx5dPyVjQ9yN7C6mLZSp04HyWBEMqT320DIq4MW4JgzlOPDZX5ZpBM3bU6sacU4kTLUc8VgYQZYw==
-  dependencies:
-    lodash "^4.17.4"
-    quill "^1.2.2"
-    raw-loader "^0.5.1"
-
-quill@^1.2.2, quill@^1.3.7:
+quill@^1.3.7:
   version "1.3.7"
   resolved "https://registry.yarnpkg.com/quill/-/quill-1.3.7.tgz#da5b2f3a2c470e932340cdbf3668c9f21f9286e8"
   integrity sha512-hG/DVzh/TiknWtE6QmWAF/pxoZKYxfe3J/d/+ShUWkDvvkZQVTPeVmUJVu1uE6DDooC4fWTiCLh84ul89oNz5g==
@@ -2331,11 +2314,6 @@ quill@^1.2.2, quill@^1.3.7:
     extend "^3.0.2"
     parchment "^1.1.4"
     quill-delta "^3.6.2"
-
-raw-loader@^0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/raw-loader/-/raw-loader-0.5.1.tgz#0c3d0beaed8a01c966d9787bf778281252a979aa"
-  integrity sha512-sf7oGoLuaYAScB4VGr0tzetsYlS8EJH6qnTCfQ/WVEa89hALQ4RQfCKt5xCyPQKPDUbVUAIP1QsxAwfAjlDp7Q==
 
 react-dom@>=18.2.0:
   version "18.2.0"
