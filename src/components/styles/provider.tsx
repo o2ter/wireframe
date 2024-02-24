@@ -98,7 +98,7 @@ export const _StyleProvider: React.FC<_StyleProviderProps> = ({
         styles[`h${k}${infix}`] = {
           marginTop: 0,
           marginBottom: 0.5 * theme.root.fontSize,
-          fontWeight: '500',
+          fontWeight: theme.headerFontWeight,
           fontSize: v,
           lineHeight: 1.2,
         };
@@ -333,6 +333,15 @@ export const _StyleProvider: React.FC<_StyleProviderProps> = ({
       styles[`text-decoration${infix}-line-through`] = { textDecorationLine: 'line-through' };
       for (const [k, v] of _.toPairs(theme.fontSizes)) {
         styles[`fs${infix}-${k}`] = { fontSize: v };
+      }
+      for (const [k, v] of _.toPairs(theme.headerFontSizes)) {
+        styles[`h${k}${infix}`] = {
+          marginTop: 0,
+          marginBottom: 0.5 * theme.root.fontSize,
+          fontWeight: theme.headerFontWeight,
+          fontSize: v,
+          lineHeight: 1.2,
+        };
       }
       for (const [k, v] of _.toPairs(theme.displayFontSizes)) {
         styles[`display${infix}-${k}`] = { fontSize: v, fontWeight: theme.displayFontWeight };
