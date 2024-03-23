@@ -1209,11 +1209,12 @@
   dependencies:
     "@lezer/common" "^1.0.0"
 
-"@o2ter/react-ui@^0.0.348":
-  version "0.0.348"
-  resolved "https://registry.yarnpkg.com/@o2ter/react-ui/-/react-ui-0.0.348.tgz#487ab3afd959ca78001b857cd6d0e57e7e785520"
-  integrity sha512-GWMspikqyfM/22WNGUNIGEAeZKg0l6YCfkFwOjX93FVRQp1/SB0410DdIwRnUBIJxVohkNbPvXS0DnGFKFuxvw==
+"@o2ter/react-ui@^0.0.349":
+  version "0.0.349"
+  resolved "https://registry.yarnpkg.com/@o2ter/react-ui/-/react-ui-0.0.349.tgz#ae261fb075be0420c62dc487393bea882ab9c46b"
+  integrity sha512-ftiEFvF4+AwNIGONVbwjc/IbApPHJnSZYWr/cFxmKrDaeH8Efs1hiL0X16JFFkBPRNN1mzm2v98wHRVs67kOzw==
   dependencies:
+    "@o2ter/utils-js" "^0.0.7"
     "@react-native-picker/picker" ">=2.4.8"
     "@react-native/normalize-colors" "^0.74.1"
     "@types/quill" "^2.0.14"
@@ -1239,6 +1240,13 @@
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@o2ter/utils-js/-/utils-js-0.0.1.tgz#f208778d49b1dcb27eb75cbd32a6ce444df64e0c"
   integrity sha512-IOZbRAdkLaDMoh4Ff1rIx3zIURTWNwCdEZMinjS5xipBTy0MwMtT/0kJrC+rdgoWUPEIZXlcdZcj09RQ4U+RIw==
+  dependencies:
+    lodash ">=4.17.21"
+
+"@o2ter/utils-js@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@o2ter/utils-js/-/utils-js-0.0.7.tgz#89f64f387cc82b9d956ae28d95e60579388a75f0"
+  integrity sha512-lQNCkFK+pdYYXdFBo3gdfBEjzAms6DsQftl52RPXOoUHH7hWATNc2nCIKjNRNiJXGdJ9lgK9a/+gvfKBiZceZQ==
   dependencies:
     lodash ">=4.17.21"
 
