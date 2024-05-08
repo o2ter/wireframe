@@ -68,7 +68,7 @@ export default [
     ...rollupConfig,
     output: [
       {
-        file: `dist/index${suffix}.d.js`,
+        file: `dist/index${suffix}.d.ts`,
         format: 'es',
       },
     ],
