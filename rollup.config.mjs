@@ -39,8 +39,13 @@ const rollupConfig = {
   ],
 };
 
+const moduleSuffixes = {
+  '.web': ['.web', ''],
+  '': [''],
+};
+
 export default [
-  ...['.web', ''].map(suffix => ({
+  ..._.map(moduleSuffixes, (exts, suffix) => ({
     ...rollupConfig,
     output: [
       {
@@ -64,7 +69,7 @@ export default [
       ...rollupPlugins
     ],
   })),
-  ...['.web', ''].map(suffix => ({
+  ..._.map(moduleSuffixes, (exts, suffix) => ({
     ...rollupConfig,
     output: [
       {
