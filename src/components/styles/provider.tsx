@@ -325,6 +325,11 @@ export const _StyleProvider: React.FC<_StyleProviderProps> = ({
           wordWrap: 'break-word',
           wordBreak: 'break-word',
         } as any;
+        styles[`text${infix}-truncate`] = {
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          whiteSpace: 'nowrap',
+        } as any;
       }
       styles[`fst${infix}-normal`] = { fontStyle: 'normal' };
       styles[`fst${infix}-italic`] = { fontStyle: 'italic' };
