@@ -144,6 +144,19 @@ export const _StyleProvider: React.FC<_StyleProviderProps> = ({
         };
       }
 
+      styles[`container${infix}`] = {
+        width: '100%',
+        marginHorizontal: 'auto',
+        paddingHorizontal: 0.75 * theme.spacer,
+        maxWidth: 1280,
+      };
+
+      styles[`container-fluid`] = {
+        width: '100%',
+        marginHorizontal: 'auto',
+        paddingHorizontal: 0.75 * theme.spacer,
+      };
+
       return _.mapValues(styles, style => ({ style, breakpoint }));
     }
 

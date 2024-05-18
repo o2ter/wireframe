@@ -1,5 +1,5 @@
 //
-//  index.js
+//  index.tsx
 //
 //  The MIT License
 //  Copyright (c) 2021 - 2024 O2ter Limited. All rights reserved.
@@ -23,8 +23,28 @@
 //  THE SOFTWARE.
 //
 
-export * from './styles';
-export * from './alert';
-export * from './flex';
-export * from './container';
-export * from './layout';
+import _ from 'lodash';
+import React from 'react';
+import { View, createMemoComponent } from '@o2ter/react-ui';
+
+type ContainerProps = React.ComponentPropsWithoutRef<typeof View> & {
+  fluid?: boolean;
+};
+
+export const Container = createMemoComponent((
+  {
+    classes,
+    fluid,
+    ...props
+  }: ContainerProps,
+  forwardRef: React.ForwardedRef<React.ComponentRef<typeof View>>
+) => (
+  <View
+    ref={forwardRef}
+    classes={[
+      fluid ? 'container-fluid' : 'container',
+      classes
+    ]}
+    {...props}
+  />
+), { displayName: 'Container' });
