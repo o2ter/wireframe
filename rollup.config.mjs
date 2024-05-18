@@ -39,22 +39,17 @@ const rollupConfig = {
   ],
 };
 
-const moduleSuffixes = {
-  '.web': ['.web', ''],
-  '': [''],
-};
-
 export default [
-  ..._.map(moduleSuffixes, (exts, suffix) => ({
+  {
     ...rollupConfig,
     output: [
       {
-        file: `dist/index${suffix}.js`,
+        file: 'dist/index.js',
         format: 'cjs',
         sourcemap: true,
       },
       {
-        file: `dist/index${suffix}.mjs`,
+        file: 'dist/index.mjs',
         format: 'esm',
         sourcemap: true,
       },
@@ -62,29 +57,29 @@ export default [
     plugins: [
       resolve({
         extensions: [
-          ..._.uniq([suffix, '']).flatMap(x => [`${x}.tsx`, `${x}.jsx`]),
-          ..._.uniq([suffix, '']).flatMap(x => [`${x}.ts`, `${x}.mjs`, `${x}.js`]),
+          '.tsx', '.jsx',
+          '.ts', '.mjs', '.js',
         ]
       }),
       ...rollupPlugins
     ],
-  })),
-  ..._.map(moduleSuffixes, (exts, suffix) => ({
+  },
+  {
     ...rollupConfig,
     output: [
       {
-        file: `dist/index${suffix}.d.ts`,
+        file: 'dist/index.d.ts',
         format: 'es',
       },
     ],
     plugins: [
       resolve({
         extensions: [
-          ..._.uniq([suffix, '']).flatMap(x => [`${x}.tsx`, `${x}.jsx`]),
-          ..._.uniq([suffix, '']).flatMap(x => [`${x}.ts`, `${x}.mjs`, `${x}.js`]),
+          '.tsx', '.jsx',
+          '.ts', '.mjs', '.js',
         ]
       }),
-      dts()
+      dts(),
     ],
-  })),
+  },
 ];
