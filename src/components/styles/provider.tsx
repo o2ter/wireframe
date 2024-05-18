@@ -241,22 +241,22 @@ export const _StyleProvider: React.FC<_StyleProviderProps> = ({
         styles[`right${infix}-${x}`] = { right: `${x}%` };
         styles[`w${infix}-${x}`] = { width: `${x}%` };
         styles[`h${infix}-${x}`] = { height: `${x}%` };
-        styles[`vw${infix}-${x}`] = { width: screen ? screen.width * x / 100 : `${x}vw` };
-        styles[`vh${infix}-${x}`] = { height: screen ? screen.height * x / 100 : `${x}vh` };
-        styles[`dvw${infix}-${x}`] = { width: screen ? screen.width * x / 100 : dynamicViewportSupport ? `${x}dvw` : `${x}vw` };
-        styles[`dvh${infix}-${x}`] = { height: screen ? screen.height * x / 100 : dynamicViewportSupport ? `${x}dvh` : `${x}vh` };
+        styles[`vw${infix}-${x}`] = { width: screen ? screen.width * x / 100 : `${x}vw` as any };
+        styles[`vh${infix}-${x}`] = { height: screen ? screen.height * x / 100 : `${x}vh` as any };
+        styles[`dvw${infix}-${x}`] = { width: screen ? screen.width * x / 100 : dynamicViewportSupport ? `${x}dvw` : `${x}vw` as any };
+        styles[`dvh${infix}-${x}`] = { height: screen ? screen.height * x / 100 : dynamicViewportSupport ? `${x}dvh` : `${x}vh` as any };
         styles[`min-w${infix}-${x}`] = { minWidth: `${x}%` };
         styles[`min-h${infix}-${x}`] = { minHeight: `${x}%` };
-        styles[`min-vw${infix}-${x}`] = { minWidth: screen ? screen.width * x / 100 : `${x}vw` };
-        styles[`min-vh${infix}-${x}`] = { minHeight: screen ? screen.height * x / 100 : `${x}vh` };
-        styles[`min-dvw${infix}-${x}`] = { minWidth: screen ? screen.width * x / 100 : dynamicViewportSupport ? `${x}dvw` : `${x}vw` };
-        styles[`min-dvh${infix}-${x}`] = { minHeight: screen ? screen.height * x / 100 : dynamicViewportSupport ? `${x}dvh` : `${x}vh` };
+        styles[`min-vw${infix}-${x}`] = { minWidth: screen ? screen.width * x / 100 : `${x}vw` as any };
+        styles[`min-vh${infix}-${x}`] = { minHeight: screen ? screen.height * x / 100 : `${x}vh` as any };
+        styles[`min-dvw${infix}-${x}`] = { minWidth: screen ? screen.width * x / 100 : dynamicViewportSupport ? `${x}dvw` : `${x}vw` as any };
+        styles[`min-dvh${infix}-${x}`] = { minHeight: screen ? screen.height * x / 100 : dynamicViewportSupport ? `${x}dvh` : `${x}vh` as any };
         styles[`max-w${infix}-${x}`] = { maxWidth: `${x}%` };
         styles[`max-h${infix}-${x}`] = { maxHeight: `${x}%` };
-        styles[`max-vw${infix}-${x}`] = { maxWidth: screen ? screen.width * x / 100 : `${x}vw` };
-        styles[`max-vh${infix}-${x}`] = { maxHeight: screen ? screen.height * x / 100 : `${x}vh` };
-        styles[`max-dvw${infix}-${x}`] = { maxWidth: screen ? screen.width * x / 100 : dynamicViewportSupport ? `${x}dvw` : `${x}vw` };
-        styles[`max-dvh${infix}-${x}`] = { maxHeight: screen ? screen.height * x / 100 : dynamicViewportSupport ? `${x}dvh` : `${x}vh` };
+        styles[`max-vw${infix}-${x}`] = { maxWidth: screen ? screen.width * x / 100 : `${x}vw` as any };
+        styles[`max-vh${infix}-${x}`] = { maxHeight: screen ? screen.height * x / 100 : `${x}vh` as any };
+        styles[`max-dvw${infix}-${x}`] = { maxWidth: screen ? screen.width * x / 100 : dynamicViewportSupport ? `${x}dvw` : `${x}vw` as any };
+        styles[`max-dvh${infix}-${x}`] = { maxHeight: screen ? screen.height * x / 100 : dynamicViewportSupport ? `${x}dvh` : `${x}vh` as any };
       }
 
       styles[`m${infix}-auto`] = { margin: 'auto' };
@@ -553,20 +553,20 @@ export const _StyleProvider: React.FC<_StyleProviderProps> = ({
         shadowOpacity: 0,
         shadowRadius: 0,
         boxShadow: 'none',
-      });
+      }) as any;
 
       styles[`shadow${infix}-sm`] = selectPlatformShadow({
         shadowColor: 'black',
         ...elevationShadow(2),
-      });
+      }) as any;
       styles[`shadow${infix}`] = selectPlatformShadow({
         shadowColor: 'black',
         ...elevationShadow(12),
-      });
+      }) as any;
       styles[`shadow${infix}-lg`] = selectPlatformShadow({
         shadowColor: 'black',
         ...elevationShadow(24),
-      });
+      }) as any;
 
       for (const [k, v] of _.toPairs(theme.zIndex)) {
         styles[`zindex${infix}-${k}`] = { zIndex: v };
