@@ -18,17 +18,17 @@
     "lodash": ">=4.17.21"
   },
   "peerDependencies": {
-    "@o2ter/react-ui": ">=0.0.369",
+    "@o2ter/react-ui": ">=0.0.370",
     "react": ">=18.2.0",
     "react-native": ">=0.70.2",
-    "sugax": ">=1.0.101"
+    "sugax": ">=1.0.102"
   },
   "devDependencies": {
     "@babel/core": "^7.24.5",
     "@babel/preset-env": "^7.24.5",
     "@babel/preset-react": "^7.24.1",
     "@babel/preset-typescript": "^7.24.1",
-    "@o2ter/react-ui": "^0.0.369",
+    "@o2ter/react-ui": "^0.0.370",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-json": "^6.1.0",
@@ -41,7 +41,7 @@
     "rollup": "^4.17.2",
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-pure": "^0.2.1",
-    "sugax": "^1.0.101",
+    "sugax": "^1.0.102",
     "tslib": "^2.6.2",
     "typescript": "^5.4.5"
   }
