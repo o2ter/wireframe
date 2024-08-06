@@ -37,6 +37,7 @@ const rollupConfig = {
     /^react$/,
     /^react-native$/,
   ],
+  makeAbsoluteExternalsRelative: true,
 };
 
 export default [
