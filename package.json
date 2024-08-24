@@ -18,7 +18,7 @@
     "lodash": ">=4.17.21"
   },
   "peerDependencies": {
-    "@o2ter/react-ui": ">=0.0.372",
+    "@o2ter/react-ui": ">=0.0.373",
     "react": ">=18.2.0",
     "react-native": ">=0.70.2",
     "sugax": ">=1.0.102"
@@ -28,7 +28,7 @@
     "@babel/preset-env": "^7.24.5",
     "@babel/preset-react": "^7.24.1",
     "@babel/preset-typescript": "^7.24.1",
-    "@o2ter/react-ui": "^0.0.372",
+    "@o2ter/react-ui": "^0.0.373",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-json": "^6.1.0",
