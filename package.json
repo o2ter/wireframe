@@ -21,7 +21,7 @@
     "@o2ter/react-ui": ">=0.0.374",
     "react": ">=18.2.0",
     "react-native": ">=0.70.2",
-    "sugax": ">=1.0.103"
+    "sugax": ">=1.0.104"
   },
   "devDependencies": {
     "@babel/core": "^7.24.5",
@@ -41,7 +41,7 @@
     "rollup": "^4.17.2",
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-pure": "^0.2.1",
-    "sugax": "^1.0.103",
+    "sugax": "^1.0.104",
     "tslib": "^2.6.2",
     "typescript": "^5.4.5"
   }
