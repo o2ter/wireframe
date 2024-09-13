@@ -232,6 +232,9 @@ export const _StyleProvider: React.FC<_StyleProviderProps> = ({
       styles[`left${infix}-0`] = { left: 0 };
       styles[`right${infix}-0`] = { right: 0 };
 
+      styles[`w${infix}-auto`] = { width: 'auto' };
+      styles[`h${infix}-auto`] = { height: 'auto' };
+
       for (const x of [25, 50, 75, 100]) {
         styles[`top${infix}-${x}`] = { top: `${x}%` };
         styles[`bottom${infix}-${x}`] = { bottom: `${x}%` };
