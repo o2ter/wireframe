@@ -1415,13 +1415,13 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@o2ter/react-ui@^0.0.376":
-  version "0.0.376"
-  resolved "https://registry.yarnpkg.com/@o2ter/react-ui/-/react-ui-0.0.376.tgz#8457b9489306a1b3d7c3a33e8a174c45e4ec08f6"
-  integrity sha512-LdSkzIy/kyEB95RwQvIYgKw5WU8GbjpE9sBPyVBwOK+RuaLp+KLZ5nNfyXVi2IFC97hPrH5MsVUkDSvJeIp5BA==
+"@o2ter/react-ui@^0.0.377":
+  version "0.0.377"
+  resolved "https://registry.yarnpkg.com/@o2ter/react-ui/-/react-ui-0.0.377.tgz#cf34b115d73fdb8c77a7dcdaf3ffdb367474d38a"
+  integrity sha512-KE4oNbtf4c3r5bS5OIV1wepKIY2CiBkgYIFaC7iw8TlmpRNqRN+QBcpkulBRxj+cUMqCNll6z+0T+Srsh6Er5w==
   dependencies:
     "@codemirror/lang-javascript" "^6.2.2"
-    "@o2ter/utils-js" "^0.0.10"
+    "@o2ter/utils-js" "^0.0.11"
     "@react-native-picker/picker" ">=2.7.6"
     "@react-native/normalize-colors" "^0.74.83"
     "@types/d3-dsv" "^3.0.7"
@@ -1442,10 +1442,10 @@
     react-native-svg ">=15.3.0"
     react-native-vector-icons ">=10.1.0"
 
-"@o2ter/utils-js@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@o2ter/utils-js/-/utils-js-0.0.10.tgz#ac3540ce16773c230231d8a5f70e339babd17c88"
-  integrity sha512-SAV9gsIdkjM/Z9U1Th0y2fqVptUmvgKiZXTJO1pzXYVqeYDxU6g9/iSdY5NwFW9rJFMBxk3yDC6dR3nJlhyy8Q==
+"@o2ter/utils-js@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@o2ter/utils-js/-/utils-js-0.0.11.tgz#fe4defb91400dbda66f25183331a807a28c90e4c"
+  integrity sha512-jVX7M97VyUNyAiPeZzLrAi0Fd3p8MRldnU0pttRszIN10GYeAperItnFbQ0F3DMtNaVpsF9i+aZeveQtq44oNQ==
   dependencies:
     lodash ">=4.17.21"
 
