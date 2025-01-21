@@ -134,7 +134,7 @@ export const _StyleProvider: React.FC<_StyleProviderProps> = ({
         flexBasis: 'auto',
         ...Platform.OS === 'web' ? { width: 'auto' } : {},
       };
-      for (const i of _.range(0, _gridColumns)) {
+      for (const i of _.range(_gridColumns)) {
         styles[`col${infix}-${i + 1}`] = {
           display: 'flex',
           flexGrow: 0,
