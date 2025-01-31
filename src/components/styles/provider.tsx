@@ -225,6 +225,14 @@ export const _StyleProvider: React.FC<_StyleProviderProps> = ({
         styles[`overflow${infix}-auto`] = { overflow: 'auto' as any };
       }
 
+      if (Platform.OS === 'web') {
+        styles[`order${infix}-first`] = { order: -1 } as any;
+        styles[`order${infix}-last`] = { order: 6 } as any;
+        for (const x of _.range(6)) {
+          styles[`order${infix}-${x}`] = { order: x } as any;
+        }
+      }
+
       styles[`top${infix}-0`] = { top: 0 };
       styles[`bottom${infix}-0`] = { bottom: 0 };
       styles[`start${infix}-0`] = { start: 0 };
