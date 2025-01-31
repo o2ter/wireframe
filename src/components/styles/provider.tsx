@@ -243,7 +243,7 @@ export const _StyleProvider: React.FC<_StyleProviderProps> = ({
       styles[`w${infix}-auto`] = { width: 'auto' };
       styles[`h${infix}-auto`] = { height: 'auto' };
 
-      for (const x of [25, 50, 75, 100]) {
+      for (const x of _.rangeRight(100, 0, -5)) {
         styles[`top${infix}-${x}`] = { top: `${x}%` };
         styles[`bottom${infix}-${x}`] = { bottom: `${x}%` };
         styles[`start${infix}-${x}`] = { start: `${x}%` };
