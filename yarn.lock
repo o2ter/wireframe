@@ -1415,13 +1415,13 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@o2ter/react-ui@^0.0.405":
-  version "0.0.405"
-  resolved "https://registry.yarnpkg.com/@o2ter/react-ui/-/react-ui-0.0.405.tgz#2f78d9fe40921d9907a41463840e9ca7bf0618bd"
-  integrity sha512-LWPHDFUxaYFne788C972MIcX7ET8CDjWQNpxTPo229PLt/vlaz2H/szFblV0H/hlsGDoCUvQNocIcXbFyIf0jQ==
+"@o2ter/react-ui@^0.0.406":
+  version "0.0.406"
+  resolved "https://registry.yarnpkg.com/@o2ter/react-ui/-/react-ui-0.0.406.tgz#3c646e36ed4bc4a45694cc637bab975dccda4dfc"
+  integrity sha512-NL+VKH/8w2VqHBp6cXjVEEbBB+2pPVQrOgEWbvlTwmb0F6Lye99VbCt0ZIAunu5FF3+K897C6qyQ9L0+4NJa5Q==
   dependencies:
     "@codemirror/lang-javascript" "^6.2.2"
-    "@o2ter/utils-js" "^0.0.17"
+    "@o2ter/utils-js" "^0.0.18"
     "@react-native-picker/picker" ">=2.7.6"
     "@react-native/normalize-colors" "^0.74.83"
     "@types/d3-dsv" "^3.0.7"
@@ -1443,10 +1443,10 @@
     react-native-vector-icons ">=10.1.0"
     react-router-dom "^7.1.1"
 
-"@o2ter/utils-js@^0.0.17":
-  version "0.0.17"
-  resolved "https://registry.yarnpkg.com/@o2ter/utils-js/-/utils-js-0.0.17.tgz#b18be26781a0539c0cd592c26f5cd70d5622057c"
-  integrity sha512-IwbvwdCL9pxq5eK9Lsy+AOA8g3YNWNqebWEW68qy0Dc0zI+FlcLZsewJfBIYkQJ2kgroNTIEbohqHyQIHVt+zg==
+"@o2ter/utils-js@^0.0.18":
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/@o2ter/utils-js/-/utils-js-0.0.18.tgz#65be6f80d331d9372ecb8cbf9f16265a5b8e07ac"
+  integrity sha512-7ebXdOm3CG38tjD3iKcMbhd0cl5OB9UJkxywvG0whKRAQ8Goq0eh/RlKLZtaKXeEJWatPDe7DQOjRBVCWOovsw==
   dependencies:
     lodash ">=4.17.21"
 
