@@ -1415,10 +1415,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@o2ter/react-ui@^0.0.406":
-  version "0.0.406"
-  resolved "https://registry.yarnpkg.com/@o2ter/react-ui/-/react-ui-0.0.406.tgz#3c646e36ed4bc4a45694cc637bab975dccda4dfc"
-  integrity sha512-NL+VKH/8w2VqHBp6cXjVEEbBB+2pPVQrOgEWbvlTwmb0F6Lye99VbCt0ZIAunu5FF3+K897C6qyQ9L0+4NJa5Q==
+"@o2ter/react-ui@^0.0.407":
+  version "0.0.407"
+  resolved "https://registry.yarnpkg.com/@o2ter/react-ui/-/react-ui-0.0.407.tgz#263285f86374a444c95389f6eb1faec1f1da4e3d"
+  integrity sha512-6rWycmy1Af0BwXNqKEwMzRQYZjAjm2yhlFQNrStnWBcTGl1l4UA0X+xqOHmjpUrkEN7cGEZ/zrwKIPg+cniI8w==
   dependencies:
     "@codemirror/lang-javascript" "^6.2.2"
     "@o2ter/utils-js" "^0.0.18"
@@ -1434,7 +1434,7 @@
     lottie-web ">=5.12.2"
     luxon ">=3.4.4"
     qrcode ">=1.5.3"
-    quill "^2.0.2"
+    quill "^2.0.3"
     quill-delta "^5.1.0"
     react-dom ">=18.3.1"
     react-native-fast-image ">=8.6.3"
@@ -4303,10 +4303,10 @@ quill-delta@^5.1.0:
     lodash.clonedeep "^4.5.0"
     lodash.isequal "^4.5.0"
 
-quill@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/quill/-/quill-2.0.2.tgz#5b26bc10a74e9f7fdcfdb5156b3133a3ebf0a814"
-  integrity sha512-QfazNrhMakEdRG57IoYFwffUIr04LWJxbS/ZkidRFXYCQt63c1gK6Z7IHUXMx/Vh25WgPBU42oBaNzQ0K1R/xw==
+quill@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/quill/-/quill-2.0.3.tgz#752765a31d5a535cdc5717dc49d4e50099365eb1"
+  integrity sha512-xEYQBqfYx/sfb33VJiKnSJp8ehloavImQ2A6564GAbqG55PGw1dAWUn1MUbQB62t0azawUS2CZZhWCjO8gRvTw==
   dependencies:
     eventemitter3 "^5.0.1"
     lodash-es "^4.17.21"
