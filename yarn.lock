@@ -1415,10 +1415,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@o2ter/react-ui@^0.0.410":
-  version "0.0.410"
-  resolved "https://registry.yarnpkg.com/@o2ter/react-ui/-/react-ui-0.0.410.tgz#71144318b0c38e891b1a614b900886e929481e10"
-  integrity sha512-TgTV3P1NQ5XVXP9njlBMnrZg+uduqi84RaU270i+vopUoe1D+vmjaVbrbIdZNAI7h62T77b3zagTlv0YJ45qVQ==
+"@o2ter/react-ui@^0.0.411":
+  version "0.0.411"
+  resolved "https://registry.yarnpkg.com/@o2ter/react-ui/-/react-ui-0.0.411.tgz#b0b6c62c1e72152d57bdac58839c5eb0b939f399"
+  integrity sha512-y6ippk9zAt9ilxaRmW0aLXExwMjIO9OOh4OQbxuDRT9q5jl4nEZ6jDKXrcttVq2XpY/O2q8dlggQW8VkU0dZ9Q==
   dependencies:
     "@codemirror/lang-javascript" "^6.2.2"
     "@o2ter/utils-js" "^0.0.18"
