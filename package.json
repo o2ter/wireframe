@@ -15,7 +15,7 @@
     "rollup": "yarn clean && rollup -c"
   },
   "dependencies": {
-    "lodash": ">=4.17.21"
+    "lodash": ">=4.17.23"
   },
   "peerDependencies": {
     "@o2ter/react-ui": ">=0.0.414",
